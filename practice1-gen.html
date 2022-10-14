@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>practice1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="practice1-gen_files/libs/clipboard/clipboard.min.js"></script>
+<script src="practice1-gen_files/libs/quarto-html/quarto.js"></script>
+<script src="practice1-gen_files/libs/quarto-html/popper.min.js"></script>
+<script src="practice1-gen_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="practice1-gen_files/libs/quarto-html/anchor.min.js"></script>
+<link href="practice1-gen_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="practice1-gen_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="practice1-gen_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="practice1-gen_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="practice1-gen_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">practice1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="install-load-packages" class="level2">
+<h2 class="anchored" data-anchor-id="install-load-packages">Install &amp; load packages</h2>
+<p><code>install.packages(c("readxl", "car", "Hmisc", "party", "gmodels", "lme4", "MuMIn", "effects", "report", "parameters", "performance", "see", "patchwork", "merDeriv"))</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lattice</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: survival</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: Formula</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: ggplot2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'Hmisc'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    format.pval, units</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: grid</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: mvtnorm</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: modeltools</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: stats4</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'modeltools'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:car':
+
+    Predict</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: strucchange</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: zoo</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'zoo'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: sandwich</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: Matrix</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'lme4'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:modeltools':
+
+    refit</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MuMIn)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Use the command
+    lattice::trellis.par.set(effectsTheme())
+  to customize lattice options for effects plots.
+See ?effectsTheme for details.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(report)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parameters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'parameters'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:gmodels':
+
+    ci</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:modeltools':
+
+    parameters</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="load-the-dataset-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-dataset-into-r">Load the dataset into R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>gen <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"genitives-finalized.csv"</span>,</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">header=</span><span class="cn">TRUE</span>,</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">sep=</span><span class="st">","</span>,</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">dec=</span><span class="st">"."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>gen <span class="ot">&lt;-</span> <span class="fu">droplevels</span>(<span class="fu">subset</span>(gen, Inclusion <span class="sc">==</span> <span class="st">"y"</span>)) </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>gen <span class="ot">&lt;-</span> <span class="fu">droplevels</span>(<span class="fu">subset</span>(gen, Speaker.sex <span class="sc">==</span> <span class="st">"F"</span> <span class="sc">|</span> Speaker.sex <span class="sc">==</span> <span class="st">"M"</span>)) </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>gen <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(gen)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Possessor.definiteness[gen<span class="sc">$</span>Possessor.definiteness<span class="sc">==</span><span class="st">"definite"</span>] <span class="ot">&lt;-</span> <span class="st">"Definite"</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>gen <span class="ot">&lt;-</span> <span class="fu">droplevels</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Response.variable <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Response.variable)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Variety <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Variety)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Speaker.sex <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Speaker.sex)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Speaker.age <span class="ot">=</span> <span class="fu">as.numeric</span>(gen<span class="sc">$</span>Speaker.age)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Final.sibilancy <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Final.sibilancy)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Semantic.relation <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Semantic.relation)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Possessor.animacy <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Possessor.animacy)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Possessor.definiteness <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Possessor.definiteness)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Possessor.length <span class="ot">=</span> <span class="fu">as.numeric</span>(gen<span class="sc">$</span>Possessor.length)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Possessum.length <span class="ot">=</span> <span class="fu">as.numeric</span>(gen<span class="sc">$</span>Possessum.length)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Corpus <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Corpus)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Speaker <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Speaker)</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Persistence <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Persistence)</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Inclusion <span class="ot">=</span> <span class="fu">as.factor</span>(gen<span class="sc">$</span>Inclusion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>VarietyNew <span class="ot">&lt;-</span> car<span class="sc">::</span><span class="fu">recode</span>(gen<span class="sc">$</span>Variety, <span class="st">"</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="st">                                  'CAN'  = 'NorthernHemisphere'; </span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="st">                                  'US'   = 'NorthernHemisphere'; </span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="st">                                  'UK'   = 'NorthernHemisphere'; </span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="st">                                  'NZ'   = 'SouthernHemisphere'</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="st">                                  "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>gen <span class="ot">=</span> <span class="fu">subset</span>(gen, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"Response.variable"</span>,</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Variety"</span>,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"VarietyNew"</span>,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Speaker.sex"</span>,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Speaker.age"</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Final.sibilancy"</span>,</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Semantic.relation"</span>,</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Possessor.animacy"</span>,</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Possessor.definiteness"</span>,</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Possessor.length"</span>,</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Possessum.length"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Response.variable Variety                 VarietyNew   Speaker.sex
+ of-genitive:2994    CAN:1983   NorthernHemisphere:4020   F:2548     
+ s-genitive :2900    NZ :1874   SouthernHemisphere:1874   M:3346     
+                     UK : 939                                        
+                     US :1098                                        
+                                                                     
+                                                                     
+  Speaker.age    Final.sibilancy Semantic.relation Possessor.animacy
+ Min.   :17.00   0:5097          B: 167            A:3026           
+ 1st Qu.:29.00   1: 797          K: 832            C: 287           
+ Median :47.00                   N:3850            I:1707           
+ Mean   :47.34                   O: 670            L: 454           
+ 3rd Qu.:61.00                   P: 375            T: 420           
+ Max.   :99.00                                                      
+ Possessor.definiteness Possessor.length Possessum.length
+ Definite   :3410       Min.   : 1.000   Min.   :1.000   
+ Definite-pn:1349       1st Qu.: 1.000   1st Qu.:1.000   
+ Indefinite :1135       Median : 2.000   Median :1.000   
+                        Mean   : 2.062   Mean   :1.234   
+                        3rd Qu.: 2.000   3rd Qu.:1.000   
+                        Max.   :26.000   Max.   :9.000   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5894   11</code></pre>
+</div>
+</div>
+</section>
+<section id="crosstable-boxplot-mean-values" class="level2">
+<h2 class="anchored" data-anchor-id="crosstable-boxplot-mean-values">Crosstable &amp; boxplot &amp; mean values</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">CrossTable</span>(</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    gen<span class="sc">$</span>Response.variable,       <span class="co"># specify here what's in the rows</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    gen<span class="sc">$</span>Speaker.sex,             <span class="co"># specify here what'S in the columns</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits=</span><span class="dv">1</span>,</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">expected=</span><span class="cn">FALSE</span>,</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop.r=</span><span class="cn">FALSE</span>,</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop.c=</span><span class="cn">TRUE</span>,                 <span class="co"># specfies that we want column-wise percentages</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop.t=</span><span class="cn">FALSE</span>,</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop.chisq =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">chisq=</span><span class="cn">FALSE</span>,</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">format=</span><span class="st">"SPSS"</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   Cell Contents
+|-------------------------|
+|                   Count |
+|          Column Percent |
+|-------------------------|
+
+Total Observations in Table:  5894 
+
+                      | gen$Speaker.sex 
+gen$Response.variable |        F  |        M  | Row Total | 
+----------------------|-----------|-----------|-----------|
+          of-genitive |     1146  |     1848  |     2994  | 
+                      |     45.0% |     55.2% |           | 
+----------------------|-----------|-----------|-----------|
+           s-genitive |     1402  |     1498  |     2900  | 
+                      |     55.0% |     44.8% |           | 
+----------------------|-----------|-----------|-----------|
+         Column Total |     2548  |     3346  |     5894  | 
+                      |     43.2% |     56.8% |           | 
+----------------------|-----------|-----------|-----------|
+
+ </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(Speaker.age <span class="sc">~</span> Response.variable, gen, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Response.variable Speaker.age
+1       of-genitive    46.19539
+2        s-genitive    48.51345</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="do">### box plot -- see https://en.wikipedia.org/wiki/Box_plot</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(gen<span class="sc">$</span>Speaker.age <span class="sc">~</span> gen<span class="sc">$</span>Response.variable, <span class="co"># specify y-axis and x-axis (categories)</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">data=</span>gen</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practice1-gen_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="conditional-inference-tree" class="level2">
+<h2 class="anchored" data-anchor-id="conditional-inference-tree">Conditional inference tree</h2>
+<div class="cell" data-hash="practice1-gen_cache/html/fig-ctree_aa1922257ed4f5ff926e1426e0ea9b35">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>tree <span class="ot">=</span> <span class="fu">ctree</span>(Response.variable <span class="sc">~</span>           <span class="co"># specificy the response variable here</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>               Variety <span class="sc">+</span>                   <span class="co"># specify the predictors here</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>               Speaker.sex <span class="sc">+</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>               Speaker.age <span class="sc">+</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>               Final.sibilancy <span class="sc">+</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>               Semantic.relation <span class="sc">+</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>               Possessor.animacy <span class="sc">+</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>               Possessor.definiteness <span class="sc">+</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>               Possessor.length <span class="sc">+</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>               Possessum.length</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>             , <span class="at">data =</span> gen,<span class="at">control=</span><span class="fu">ctree_control</span>(<span class="at">maxdepth=</span><span class="dv">3</span>)) <span class="co"># maxdepth specifies the height of the tree. Reduce to reduce complexity.</span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tree)</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(tree, inner_panel = node_barplot) # with additional bars in each node</span></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="do">#### model C index</span></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="do">#### C ranges between .5 and 1; the closer to 1, the better the fit of the model</span></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>your.ctree.pred <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">treeresponse</span>(tree))[<span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>)]</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="fu">somers2</span>(your.ctree.pred, <span class="fu">as.numeric</span>(gen<span class="sc">$</span>Response.variable) <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           C          Dxy            n      Missing 
+   0.9395849    0.8791698 5894.0000000    0.0000000 </code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-ctree" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="practice1-gen_files/figure-html/fig-ctree-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: <strong>?(caption)</strong></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-forests" class="level2">
+<h2 class="anchored" data-anchor-id="random-forests">Random forests</h2>
+<div class="cell" data-hash="practice1-gen_cache/html/fig-rforest_e8b8decf6963e5295178ce6b8d2d075c">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># esnures that we can reproduce results</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>forest <span class="ot">=</span> <span class="fu">cforest</span>(Response.variable <span class="sc">~</span>          <span class="co"># specificy the response variable here</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>                   Variety <span class="sc">+</span>                  <span class="co"># specify the predictors here</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>                   Speaker.sex <span class="sc">+</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>                   Speaker.age <span class="sc">+</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>                   Final.sibilancy <span class="sc">+</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>                   Semantic.relation <span class="sc">+</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>                   Possessor.animacy <span class="sc">+</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>                   Possessor.definiteness <span class="sc">+</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>                   Possessor.length <span class="sc">+</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>                   Possessum.length</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>                 , <span class="at">data =</span> gen)</span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="do">#### calculate variable importance ranking, takes some time</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>forest.varimp <span class="ot">=</span> <span class="fu">varimp</span>(forest, <span class="at">conditional =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="do">#### model C index</span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="do">#### C ranges between 0.5 an 1; the closer to 1, the better the model</span></span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>prob2.rf <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">treeresponse</span>(forest))[<span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>)]</span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>somerssmallcrf <span class="ot">&lt;-</span> <span class="fu">somers2</span>(prob2.rf, <span class="fu">as.numeric</span>(gen<span class="sc">$</span>Response.variable) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>somerssmallcrf[<span class="st">"C"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        C 
+0.9814955 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="do">### the following code creates a dot plot visualizing the variable importance ranking</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dotplot</span>(<span class="fu">sort</span>(forest.varimp), <span class="at">xlab=</span><span class="st">"Variable Importance"</span>, <span class="at">panel =</span> <span class="cf">function</span>(x,y){</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">panel.dotplot</span>(x, y, <span class="at">col=</span><span class="st">'darkblue'</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.1</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">panel.abline</span>(<span class="at">v=</span><span class="fu">abs</span>(<span class="fu">min</span>(forest.varimp)), <span class="at">col=</span><span class="st">'red'</span>,</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">lty=</span><span class="st">'longdash'</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-rforest" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="practice1-gen_files/figure-html/fig-rforest-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: <strong>?(caption)</strong></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ligistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="ligistic-regression">Ligistic Regression</h2>
+<div class="cell" data-hash="practice1-gen_cache/html/unnamed-chunk-12_82af4d0ba1a93d1ebb9d0133403c84a0">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Response.variable <span class="ot">&lt;-</span> <span class="fu">relevel</span>(gen<span class="sc">$</span>Response.variable, <span class="at">ref=</span><span class="st">"of-genitive"</span>) <span class="co"># reference level is of-genitive, thus predicted odds are for the s-genitive</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>glmmodel <span class="ot">=</span> <span class="fu">glm</span>(Response.variable <span class="sc">~</span>             <span class="co"># specify response variables here</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>                 Final.sibilancy <span class="sc">+</span>             <span class="co"># specify oredictors in what follow</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>                 Semantic.relation <span class="sc">+</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>                 Possessor.animacy <span class="sc">+</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>                 Possessor.definiteness <span class="sc">+</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>                 Possessor.length <span class="sc">+</span></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>                 Possessum.length <span class="sc">+</span></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>                 Speaker.sex <span class="sc">+</span></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>                 Speaker.age</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>               </span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>               , <span class="at">family=</span>binomial, <span class="at">data=</span>gen)</span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glmmodel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Response.variable ~ Final.sibilancy + Semantic.relation + 
+    Possessor.animacy + Possessor.definiteness + Possessor.length + 
+    Possessum.length + Speaker.sex + Speaker.age, family = binomial, 
+    data = gen)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-3.3404  -0.3130  -0.0220   0.3319   3.2931  
+
+Coefficients:
+                                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                        4.578770   0.362662  12.625  &lt; 2e-16 ***
+Final.sibilancy1                  -1.302106   0.151291  -8.607  &lt; 2e-16 ***
+Semantic.relationK                 0.465219   0.330786   1.406  0.15960    
+Semantic.relationN                -0.924005   0.291227  -3.173  0.00151 ** 
+Semantic.relationO                 2.104953   0.434935   4.840 1.30e-06 ***
+Semantic.relationP                -1.573100   0.506189  -3.108  0.00189 ** 
+Possessor.animacyC                -3.428574   0.188448 -18.194  &lt; 2e-16 ***
+Possessor.animacyI                -4.961995   0.178630 -27.778  &lt; 2e-16 ***
+Possessor.animacyL                -4.193614   0.185985 -22.548  &lt; 2e-16 ***
+Possessor.animacyT                -3.912749   0.175104 -22.345  &lt; 2e-16 ***
+Possessor.definitenessDefinite-pn -0.021632   0.142839  -0.151  0.87963    
+Possessor.definitenessIndefinite  -0.785438   0.137975  -5.693 1.25e-08 ***
+Possessor.length                  -0.849192   0.065849 -12.896  &lt; 2e-16 ***
+Possessum.length                   0.179511   0.074910   2.396  0.01656 *  
+Speaker.sexM                      -0.039858   0.102485  -0.389  0.69734    
+Speaker.age                       -0.004835   0.002580  -1.874  0.06093 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8169.3  on 5893  degrees of freedom
+Residual deviance: 2819.1  on 5878  degrees of freedom
+AIC: 2851.1
+
+Number of Fisher Scoring iterations: 7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(glmmodel))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                      (Intercept)                  Final.sibilancy1 
+                      97.39453648                        0.27195849 
+               Semantic.relationK                Semantic.relationN 
+                       1.59236263                        0.39692618 
+               Semantic.relationO                Semantic.relationP 
+                       8.20671992                        0.20740118 
+               Possessor.animacyC                Possessor.animacyI 
+                       0.03243315                        0.00699895 
+               Possessor.animacyL                Possessor.animacyT 
+                       0.01509164                        0.01998548 
+Possessor.definitenessDefinite-pn  Possessor.definitenessIndefinite 
+                       0.97860009                        0.45592016 
+                 Possessor.length                  Possessum.length 
+                       0.42776025                        1.19663204 
+                     Speaker.sexM                       Speaker.age 
+                       0.96092631                        0.99517671 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>fitted <span class="ot">&lt;-</span> <span class="fu">fitted</span>(glmmodel)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>fitted </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   [1] 4.298885e-02 1.195416e-02 9.760931e-01 7.666914e-01 4.818764e-01
+   [6] 9.526981e-01 9.436622e-01 9.436622e-01 9.436622e-01 9.524798e-01
+  [11] 8.793201e-01 9.418356e-01 7.065772e-01 6.391138e-01 8.668772e-01
+  [16] 6.357616e-01 8.764928e-01 6.404995e-01 9.608547e-01 6.188077e-01
+  [21] 9.306753e-01 8.489366e-01 9.309863e-01 1.094554e-01 9.250220e-01
+  [26] 8.475160e-01 9.550380e-01 9.941855e-01 9.941855e-01 9.861517e-01
+  [31] 9.861517e-01 9.901278e-01 9.972957e-01 9.972957e-01 9.469121e-01
+  [36] 9.469121e-01 9.972957e-01 9.862176e-01 8.290843e-01 8.996508e-01
+  [41] 9.897305e-01 9.448724e-01 9.971861e-01 9.934464e-01 9.934464e-01
+  [46] 9.971861e-01 9.971861e-01 9.897305e-01 8.479748e-01 8.822425e-01
+  [51] 9.971861e-01 9.729481e-01 8.799765e-01 9.860381e-01 9.938348e-01
+  [56] 8.925879e-01 8.863207e-01 7.693252e-01 6.784715e-01 6.784715e-01
+  [61] 9.688738e-01 9.466685e-01 9.301434e-01 8.283981e-01 9.550380e-01
+  [66] 9.775929e-01 7.290923e-01 9.688738e-01 9.466685e-01 7.045119e-01
+  [71] 8.283981e-01 9.550380e-01 9.494543e-01 9.494543e-01 9.688738e-01
+  [76] 9.865121e-01 9.688738e-01 9.935549e-01 7.573453e-01 9.524277e-01
+  [81] 8.817393e-01 9.676491e-01 9.855967e-01 9.935549e-01 9.446200e-01
+  [86] 9.491421e-01 9.002257e-01 9.688738e-01 9.688738e-01 9.688738e-01
+  [91] 9.688738e-01 9.688738e-01 9.688738e-01 9.688738e-01 9.688738e-01
+  [96] 9.513332e-01 6.922184e-01 9.972827e-01 8.916572e-01 9.688820e-01
+ [101] 9.170595e-01 8.916572e-01 9.860855e-01 9.860855e-01 9.511088e-01
+ [106] 8.410319e-01 9.511088e-01 9.855683e-01 8.853427e-01 9.959126e-01
+ [111] 9.959126e-01 9.937753e-01 9.937753e-01 8.812342e-01 9.443666e-01
+ [116] 9.454922e-01 8.866882e-01 9.771510e-01 8.866882e-01 9.935238e-01
+ [121] 9.855279e-01 9.668103e-01 9.971588e-01 9.668103e-01 9.443666e-01
+ [126] 9.855279e-01 9.878771e-01 9.443666e-01 8.812342e-01 9.933831e-01
+ [131] 9.771510e-01 9.771510e-01 9.771510e-01 6.774158e-01 9.937753e-01
+ [136] 8.853427e-01 9.687277e-01 8.853427e-01 8.916572e-01 9.706025e-01
+ [141] 8.853427e-01 9.687277e-01 9.687277e-01 9.687277e-01 9.687277e-01
+ [146] 8.938937e-01 9.687277e-01 9.687277e-01 9.687277e-01 6.911873e-01
+ [151] 9.687277e-01 8.853427e-01 8.916572e-01 9.338761e-01 9.338761e-01
+ [156] 8.853427e-01 9.464239e-01 2.824044e-01 8.900535e-01 9.271830e-01
+ [161] 9.443666e-01 7.604188e-01 9.859043e-01 8.987744e-01 8.812342e-01
+ [166] 7.676046e-01 9.475102e-01 8.853427e-01 8.812342e-01 9.935238e-01
+ [171] 9.674974e-01 9.023434e-01 9.464239e-01 9.464239e-01 6.283520e-01
+ [176] 5.855605e-01 9.548299e-01 9.972695e-01 9.548299e-01 9.464239e-01
+ [181] 9.464239e-01 9.464239e-01 9.464239e-01 9.464239e-01 9.972695e-01
+ [186] 9.466685e-01 8.991150e-01 9.682148e-01 7.709878e-01 9.441120e-01
+ [191] 9.938921e-01 7.586527e-01 9.971313e-01 9.853893e-01 9.459314e-01
+ [196] 9.544110e-01 9.857693e-01 9.857693e-01 9.853893e-01 9.438563e-01
+ [201] 9.853893e-01 8.867790e-01 9.853893e-01 9.853893e-01 9.671920e-01
+ [206] 9.671920e-01 9.438563e-01 9.438563e-01 9.724344e-01 9.671920e-01
+ [211] 9.526450e-01 9.853893e-01 9.684334e-01 9.937152e-01 9.506572e-01
+ [216] 8.843574e-01 9.277585e-01 9.277585e-01 9.859522e-01 9.535634e-01
+ [221] 8.843574e-01 9.014880e-01 9.937152e-01 8.907195e-01 8.929730e-01
+ [226] 9.514675e-01 9.772729e-01 9.772729e-01 9.470272e-01 9.862487e-01
+ [231] 9.682853e-01 9.733578e-01 9.456836e-01 9.936849e-01 9.288762e-01
+ [236] 8.797077e-01 9.447398e-01 8.797077e-01 9.934298e-01 8.797077e-01
+ [241] 9.971174e-01 9.670382e-01 9.670382e-01 8.797077e-01 6.654237e-01
+ [246] 9.515438e-01 8.862927e-01 8.797077e-01 9.591811e-01 9.515438e-01
+ [251] 9.304389e-01 8.833648e-01 8.811175e-01 9.679870e-01 9.857499e-01
+ [256] 9.857499e-01 9.857499e-01 2.775312e-01 9.855644e-01 6.721106e-01
+ [261] 6.721106e-01 9.936240e-01 8.828657e-01 9.861206e-01 9.547201e-01
+ [266] 9.547201e-01 9.857499e-01 9.861206e-01 9.822134e-01 8.828657e-01
+ [271] 9.537757e-01 7.783850e-01 9.972029e-01 9.665727e-01 8.940731e-01
+ [276] 9.517649e-01 8.758308e-01 9.678368e-01 9.678368e-01 8.997571e-01
+ [281] 8.997571e-01 8.823648e-01 8.781642e-01 9.970754e-01 9.937436e-01
+ [286] 9.428226e-01 9.293960e-01 7.550939e-01 1.287810e-01 9.933345e-01
+ [291] 9.933345e-01 9.933345e-01 9.854954e-01 9.294942e-01 9.933345e-01
+ [296] 9.478051e-01 6.924549e-01 1.551178e-01 9.935932e-01 9.505666e-01
+ [301] 9.935932e-01 9.935932e-01 9.856818e-01 9.856818e-01 8.823648e-01
+ [306] 8.917645e-01 9.664161e-01 8.843290e-01 9.425614e-01 5.675691e-01
+ [311] 9.970613e-01 9.931569e-01 9.425614e-01 9.850371e-01 9.664161e-01
+ [316] 9.664161e-01 9.717789e-01 9.933024e-01 9.515424e-01 9.591800e-01
+ [321] 9.850371e-01 9.895032e-01 8.818620e-01 8.818620e-01 8.818620e-01
+ [326] 9.425614e-01 7.658254e-01 9.933024e-01 9.233475e-01 9.844816e-01
+ [331] 9.675344e-01 8.747753e-01 9.853566e-01 9.655464e-01 9.662589e-01
+ [336] 9.422991e-01 8.912969e-01 8.950988e-01 4.794626e-01 8.020920e-01
+ [341] 9.675344e-01 7.720477e-01 9.455529e-01 9.935314e-01 9.662589e-01
+ [346] 9.849657e-01 9.970471e-01 8.838336e-01 9.970471e-01 9.422991e-01
+ [351] 8.771259e-01 8.771259e-01 9.970471e-01 9.010330e-01 9.662589e-01
+ [356] 9.662589e-01 6.600202e-01 9.422991e-01 9.673822e-01 9.854756e-01
+ [361] 9.269357e-01 9.673822e-01 9.673822e-01 9.673822e-01 8.808509e-01
+ [366] 6.678344e-01 9.441741e-01 8.873813e-01 8.803425e-01 9.848642e-01
+ [371] 8.979992e-01 8.868972e-01 8.868972e-01 9.854063e-01 9.848642e-01
+ [376] 9.938699e-01 9.971347e-01 9.439187e-01 8.803425e-01 9.938403e-01
+ [381] 9.481187e-01 9.670757e-01 8.864113e-01 9.129235e-01 8.798322e-01
+ [386] 7.579825e-01 9.481187e-01 9.670757e-01 9.670757e-01 9.485755e-01
+ [391] 9.971208e-01 7.043810e-01 9.670757e-01 9.670757e-01 9.723362e-01
+ [396] 5.937708e-01 9.481187e-01 9.670757e-01 8.798322e-01 9.656226e-01
+ [401] 9.386558e-01 8.818331e-01 8.859236e-01 9.934059e-01 9.971069e-01
+ [406] 9.434046e-01 8.770057e-01 6.646090e-01 8.793201e-01 8.793201e-01
+ [411] 9.722059e-01 9.669214e-01 9.522605e-01 8.971101e-01 8.424865e-01
+ [416] 9.434046e-01 9.852665e-01 9.669214e-01 9.669214e-01 9.669214e-01
+ [421] 8.971101e-01 8.793201e-01 9.775065e-01 9.855811e-01 9.937809e-01
+ [426] 9.953635e-01 8.966629e-01 7.562042e-01 7.521940e-01 8.877828e-01
+ [431] 7.155172e-01 8.813284e-01 8.813284e-01 8.813284e-01 9.647331e-01
+ [436] 9.846035e-01 9.846035e-01 7.553117e-01 9.971412e-01 9.666107e-01
+ [441] 9.666107e-01 9.933423e-01 9.970789e-01 9.666107e-01 9.666107e-01
+ [446] 7.512917e-01 9.666107e-01 9.666107e-01 9.666107e-01 9.666107e-01
+ [451] 8.924477e-01 9.653002e-01 9.653002e-01 8.739649e-01 8.739649e-01
+ [456] 8.739649e-01 7.437698e-01 9.666107e-01 9.666107e-01 9.851255e-01
+ [461] 9.851255e-01 9.666107e-01 9.851255e-01 9.851255e-01 9.851255e-01
+ [466] 8.923435e-01 8.782902e-01 9.851255e-01 9.933423e-01 9.666107e-01
+ [471] 9.937509e-01 9.937509e-01 9.933423e-01 9.937509e-01 9.930401e-01
+ [476] 9.930401e-01 9.651378e-01 9.651378e-01 9.651378e-01 9.930401e-01
+ [481] 8.919828e-01 9.404311e-01 8.734314e-01 9.748763e-01 8.734314e-01
+ [486] 8.734314e-01 8.734314e-01 8.827531e-01 6.523850e-01 9.081011e-01
+ [491] 9.651378e-01 9.651378e-01 9.683268e-01 9.941771e-01 9.965935e-01
+ [496] 9.456100e-01 9.404311e-01 9.404311e-01 8.803133e-01 9.217844e-01
+ [501] 5.568593e-01 9.649748e-01 9.649748e-01 9.649748e-01 9.705607e-01
+ [506] 8.728959e-01 9.336931e-01 9.934357e-01 9.494961e-01 7.713915e-01
+ [511] 8.798029e-01 7.579316e-01 4.599030e-01 7.642990e-01 9.466730e-01
+ [516] 8.297324e-01 9.932456e-01 9.661394e-01 9.471419e-01 9.471419e-01
+ [521] 9.847152e-01 9.398871e-01 1.814434e-01 9.610221e-01 9.610221e-01
+ [526] 8.792907e-01 8.723585e-01 8.723585e-01 9.398871e-01 9.648110e-01
+ [531] 9.934041e-01 8.829588e-01 8.829588e-01 8.762077e-01 8.762077e-01
+ [536] 9.418356e-01 8.762077e-01 8.762077e-01 7.766714e-01 9.468993e-01
+ [541] 9.932131e-01 9.848394e-01 9.970220e-01 9.936297e-01 6.581120e-01
+ [546] 9.936297e-01 9.969674e-01 9.891703e-01 9.929391e-01 9.832962e-01
+ [551] 8.718192e-01 9.933723e-01 9.950584e-01 9.950584e-01 9.846423e-01
+ [556] 9.658216e-01 8.756823e-01 9.658216e-01 9.658216e-01 8.756823e-01
+ [561] 9.658216e-01 9.466557e-01 8.824582e-01 7.625526e-01 9.931805e-01
+ [566] 9.773385e-01 8.756823e-01 9.638318e-01 9.638318e-01 9.931805e-01
+ [571] 9.658216e-01 9.931805e-01 9.847671e-01 9.842017e-01 8.276734e-01
+ [576] 9.931476e-01 5.892971e-01 7.820489e-01 8.751550e-01 6.559330e-01
+ [581] 6.952401e-01 8.751550e-01 8.701895e-01 8.701895e-01 9.641485e-01
+ [586] 9.473696e-01 4.539043e-01 9.440986e-01 9.928367e-01 9.928367e-01
+ [591] 9.844214e-01 9.928367e-01 9.928367e-01 9.473696e-01 1.893443e-01
+ [596] 9.935372e-01 9.470452e-01 9.655010e-01 8.746258e-01 8.746258e-01
+ [601] 8.746258e-01 8.746258e-01 9.942395e-01 8.746258e-01 9.751406e-01
+ [606] 9.751406e-01 8.772229e-01 9.473696e-01 9.109599e-01 9.655010e-01
+ [611] 7.607973e-01 9.655010e-01 9.850210e-01 9.641485e-01 9.641485e-01
+ [616] 8.701895e-01 8.772229e-01 9.387851e-01 6.457775e-01 4.533505e-01
+ [621] 9.930815e-01 9.930815e-01 9.653396e-01 9.653396e-01 9.653396e-01
+ [626] 9.653396e-01 9.845480e-01 9.930815e-01 6.680341e-01 9.930815e-01
+ [631] 8.885708e-01 9.459184e-01 9.048218e-01 7.395774e-01 9.927676e-01
+ [636] 5.740007e-01 9.930482e-01 9.266687e-01 9.969493e-01 9.930148e-01
+ [641] 9.930148e-01 9.836988e-01 9.692916e-01 9.556330e-01 9.463969e-01
+ [646] 9.926978e-01 9.836988e-01 9.169564e-01 9.430691e-01 9.463969e-01
+ [651] 6.558703e-01 6.558703e-01 8.606423e-02 9.948892e-01 8.110550e-01
+ [656] 7.191424e-01 6.413411e-01 9.376642e-01 9.836988e-01 8.719508e-01
+ [661] 8.719508e-01 5.547628e-01 8.719508e-01 9.933801e-01 9.933801e-01
+ [666] 8.719508e-01 9.396802e-01 6.402282e-01 4.479189e-01 9.437405e-01
+ [671] 9.625310e-01 9.926627e-01 9.836211e-01 9.373810e-01 9.931128e-01
+ [676] 9.967795e-01 8.766134e-01 9.926274e-01 9.370966e-01 8.020379e-01
+ [681] 9.434832e-01 8.740641e-01 9.838895e-01 9.829330e-01 9.938314e-01
+ [686] 9.839702e-01 8.708672e-01 9.845133e-01 8.708672e-01 9.748370e-01
+ [691] 9.841004e-01 9.391297e-01 8.708672e-01 6.379979e-01 9.629600e-01
+ [696] 8.663183e-01 8.663183e-01 9.925919e-01 8.735309e-01 5.424987e-01
+ [701] 3.509123e-01 9.621261e-01 9.368110e-01 8.663183e-01 8.663183e-01
+ [706] 9.221969e-01 9.555251e-01 9.925205e-01 9.640219e-01 9.640219e-01
+ [711] 9.640219e-01 9.640219e-01 9.640219e-01 9.385746e-01 8.697759e-01
+ [716] 7.527886e-01 8.697759e-01 8.768284e-01 9.928106e-01 9.932517e-01
+ [721] 9.385746e-01 9.839484e-01 8.697759e-01 9.829953e-01 9.640219e-01
+ [726] 8.724588e-01 8.651944e-01 8.651944e-01 9.925205e-01 9.925205e-01
+ [731] 9.626136e-01 8.651944e-01 7.452967e-01 9.923582e-01 9.427048e-01
+ [736] 1.924705e-01 6.849002e-01 9.928106e-01 9.562932e-01 9.927760e-01
+ [741] 9.932192e-01 9.926192e-01 9.932192e-01 8.763053e-01 9.049232e-01
+ [746] 9.638538e-01 8.763053e-01 4.360632e-01 9.431507e-01 9.838718e-01
+ [751] 9.838718e-01 9.696129e-01 9.630925e-01 9.838718e-01 9.696129e-01
+ [756] 9.193965e-01 9.968294e-01 9.838718e-01 9.838718e-01 9.927760e-01
+ [761] 9.968294e-01 9.968294e-01 7.518878e-01 8.692272e-01 9.668849e-01
+ [766] 9.382952e-01 9.382952e-01 9.838718e-01 3.620874e-01 9.436487e-01
+ [771] 9.729103e-01 9.729103e-01 8.646295e-01 9.924845e-01 8.646295e-01
+ [776] 8.843001e-01 6.346412e-01 8.646295e-01 6.326699e-01 6.326699e-01
+ [781] 9.621310e-01 9.621310e-01 8.636325e-01 8.636325e-01 8.636325e-01
+ [786] 9.621310e-01 9.621310e-01 8.636325e-01 8.636325e-01 8.636325e-01
+ [791] 7.427586e-01 7.427586e-01 7.427586e-01 7.427586e-01 8.709684e-01
+ [796] 8.610647e-01 1.026326e-01 9.354359e-01 9.354359e-01 9.622640e-01
+ [801] 9.924484e-01 9.825226e-01 7.434567e-01 8.640626e-01 9.622640e-01
+ [806] 9.622640e-01 8.640626e-01 9.622640e-01 9.622640e-01 9.369465e-01
+ [811] 9.160218e-01 9.831471e-01 1.260354e-01 8.734412e-01 9.620881e-01
+ [816] 9.620881e-01 9.620881e-01 9.620881e-01 5.364928e-01 9.924120e-01
+ [821] 6.323961e-01 9.620881e-01 9.732176e-01 9.830668e-01 9.924120e-01
+ [826] 9.924120e-01 8.634937e-01 9.966690e-01 9.598899e-01 9.726543e-01
+ [831] 9.726543e-01 6.273530e-01 9.927064e-01 9.841404e-01 6.416120e-01
+ [836] 6.561361e-01 9.736947e-01 9.927064e-01 9.635154e-01 8.752533e-01
+ [841] 9.635154e-01 9.837177e-01 9.389842e-01 8.681241e-01 8.681241e-01
+ [846] 9.635154e-01 5.621380e-01 9.841404e-01 9.377330e-01 9.725254e-01
+ [851] 8.629228e-01 9.441461e-01 9.441461e-01 9.619113e-01 8.629228e-01
+ [856] 9.619113e-01 9.152749e-01 9.619113e-01 8.629228e-01 8.629228e-01
+ [861] 6.404995e-01 8.675696e-01 5.451898e-01 8.747245e-01 8.675696e-01
+ [866] 8.747245e-01 8.846802e-01 9.633450e-01 9.931208e-01 9.633450e-01
+ [871] 7.370024e-01 8.675696e-01 9.183150e-01 9.183150e-01 9.633450e-01
+ [876] 9.633450e-01 8.747245e-01 8.868689e-01 9.967832e-01 8.675696e-01
+ [881] 8.735611e-01 9.836400e-01 8.675696e-01 9.967832e-01 8.931095e-01
+ [886] 9.655310e-01 8.675696e-01 8.747245e-01 8.747245e-01 8.846802e-01
+ [891] 5.451898e-01 7.491720e-01 8.846802e-01 9.374501e-01 8.650644e-01
+ [896] 9.925122e-01 8.650644e-01 9.931208e-01 9.926713e-01 8.278517e-01
+ [901] 8.675696e-01 8.747245e-01 6.404995e-01 9.229716e-01 8.931095e-01
+ [906] 8.741937e-01 9.371660e-01 8.697444e-01 8.779880e-01 8.697444e-01
+ [911] 8.697444e-01 9.617338e-01 9.617338e-01 9.829051e-01 8.623499e-01
+ [916] 9.449046e-01 9.449046e-01 9.829051e-01 2.019325e-01 9.926360e-01
+ [921] 9.926360e-01 4.703807e-01 9.835620e-01 9.835620e-01 9.631739e-01
+ [926] 9.631739e-01 9.948458e-01 8.821938e-01 9.967677e-01 9.835620e-01
+ [931] 9.926006e-01 9.938089e-01 7.351238e-01 9.682338e-01 9.113085e-01
+ [936] 9.159360e-01 8.639317e-01 9.834837e-01 9.834837e-01 9.738705e-01
+ [941] 9.158205e-01 9.924400e-01 8.664546e-01 9.608547e-01 7.634430e-01
+ [946] 9.839124e-01 8.163584e-01 9.368807e-01 9.926006e-01 8.816904e-01
+ [951] 8.664546e-01 8.664546e-01 9.967521e-01 9.926006e-01 9.457168e-01
+ [956] 9.930544e-01 9.834837e-01 6.382699e-01 7.164428e-01 9.630020e-01
+ [961] 9.834837e-01 9.630020e-01 9.834837e-01 3.367952e-01 6.517596e-01
+ [966] 9.628294e-01 9.628294e-01 9.968060e-01 8.658942e-01 7.464365e-01
+ [971] 9.650450e-01 9.925650e-01 9.628294e-01 9.628294e-01 9.628294e-01
+ [976] 9.687464e-01 8.731263e-01 9.624817e-01 9.624817e-01 9.624817e-01
+ [981] 9.832464e-01 8.647673e-01 9.212353e-01 9.624817e-01 9.616927e-01
+ [986] 8.647673e-01 9.624817e-01 6.987221e-01 8.588700e-01 8.588700e-01
+ [991] 8.562275e-01 9.965380e-01 9.824107e-01 9.824107e-01 8.588700e-01
+ [996] 9.433747e-01 9.433747e-01 8.588700e-01 8.588700e-01 9.606517e-01
+[1001] 9.919441e-01 8.769452e-01 9.606517e-01 9.921151e-01 9.813681e-01
+[1006] 9.934022e-01 9.921151e-01 9.621310e-01 7.427586e-01 8.735714e-01
+[1011] 9.596390e-01 9.965213e-01 9.965213e-01 4.288751e-01 3.215897e-01
+[1016] 9.932265e-01 5.856430e-01 8.556313e-01 9.122268e-01 9.628194e-01
+[1021] 4.276913e-01 9.713385e-01 9.337305e-01 9.337305e-01 9.925272e-01
+[1026] 9.392139e-01 9.920391e-01 9.920391e-01 9.815855e-01 9.815855e-01
+[1031] 9.815855e-01 9.920391e-01 8.550330e-01 9.925272e-01 9.925272e-01
+[1036] 9.920009e-01 9.600998e-01 5.167460e-01 7.232148e-01 9.927825e-01
+[1041] 9.923110e-01 9.317671e-01 9.423327e-01 9.964707e-01 5.379187e-01
+[1046] 9.331297e-01 9.317671e-01 9.317671e-01 9.820734e-01 9.599141e-01
+[1051] 9.317671e-01 9.317671e-01 7.312864e-01 9.317671e-01 9.317671e-01
+[1056] 8.565095e-01 9.595404e-01 9.595404e-01 9.595404e-01 9.707951e-01
+[1061] 9.819024e-01 7.293819e-01 9.595404e-01 9.595404e-01 7.651500e-02
+[1066] 9.586922e-01 9.311498e-01 9.810710e-01 9.311498e-01 6.153804e-01
+[1071] 9.327575e-01 9.327575e-01 9.823474e-01 9.123211e-01 9.605133e-01
+[1076] 9.605133e-01 9.965254e-01 9.605133e-01 8.584262e-01 5.418144e-01
+[1081] 8.557767e-01 9.123211e-01 9.667863e-01 9.667863e-01 7.343569e-01
+[1086] 9.421352e-01 6.225001e-01 6.225001e-01 6.636682e-01 9.324536e-01
+[1091] 6.107928e-01 8.522995e-01 8.516899e-01 8.516899e-01 8.516899e-01
+[1096] 9.914670e-01 9.699543e-01 2.222549e-01 6.096428e-01 9.078740e-01
+[1101] 8.516899e-01 7.236179e-01 9.728375e-01 9.599594e-01 9.599594e-01
+[1106] 9.663173e-01 9.599594e-01 9.919718e-01 9.919718e-01 9.964748e-01
+[1111] 7.495964e-01 9.825583e-01 9.810330e-01 9.318420e-01 9.318420e-01
+[1116] 9.318420e-01 8.539772e-01 6.235704e-01 8.483155e-01 7.305671e-01
+[1121] 9.919332e-01 9.919332e-01 9.597732e-01 9.661596e-01 9.107617e-01
+[1126] 6.328791e-01 9.819233e-01 9.595861e-01 9.371510e-01 9.964407e-01
+[1131] 9.580118e-01 8.504642e-01 9.816889e-01 7.455371e-01 9.918554e-01
+[1136] 9.818373e-01 7.286595e-01 9.964235e-01 9.918554e-01 8.216935e-01
+[1141] 8.653421e-01 9.964235e-01 9.570510e-01 9.964235e-01 9.964235e-01
+[1146] 5.187124e-01 8.548638e-01 8.548638e-01 9.923546e-01 9.923546e-01
+[1151] 9.923546e-01 7.148876e-01 9.592094e-01 9.592094e-01 9.816640e-01
+[1156] 9.846307e-01 9.816640e-01 9.915986e-01 9.590198e-01 8.536599e-01
+[1161] 9.917770e-01 9.023267e-01 9.362912e-01 9.590198e-01 9.590198e-01
+[1166] 9.922809e-01 9.816640e-01 9.917770e-01 9.914454e-01 6.038747e-01
+[1171] 9.962426e-01 8.486102e-01 9.912600e-01 9.912600e-01 8.741626e-01
+[1176] 8.497060e-01 8.524478e-01 9.915177e-01 9.930525e-01 8.602880e-01
+[1181] 8.524478e-01 8.524478e-01 8.524478e-01 8.524478e-01 8.524478e-01
+[1186] 8.524478e-01 6.110728e-01 8.524478e-01 9.405316e-01 9.586381e-01
+[1191] 8.524478e-01 8.497060e-01 8.497060e-01 6.059194e-01 8.497060e-01
+[1196] 9.963539e-01 9.577718e-01 8.524478e-01 6.144487e-01 9.326676e-01
+[1201] 9.918140e-01 7.499744e-01 9.813126e-01 9.813126e-01 9.582530e-01
+[1206] 9.963186e-01 9.580591e-01 8.506140e-01 9.580591e-01 8.506140e-01
+[1211] 9.571812e-01 8.506140e-01 8.587456e-01 9.571812e-01 7.089381e-01
+[1216] 9.580591e-01 9.580591e-01 7.564839e-01 8.720197e-01 9.287063e-01
+[1221] 9.915774e-01 8.550015e-01 5.980776e-01 5.980776e-01 5.980776e-01
+[1226] 9.912380e-01 9.912380e-01 9.564280e-01 8.426309e-01 9.564280e-01
+[1231] 8.454782e-01 8.454782e-01 8.454782e-01 9.564280e-01 9.912380e-01
+[1236] 7.138445e-01 9.811345e-01 9.811345e-01 9.562261e-01 9.961324e-01
+[1241] 9.911959e-01 9.911959e-01 9.911959e-01 8.419887e-01 9.562261e-01
+[1246] 9.803824e-01 9.862183e-01 9.961324e-01 9.803824e-01 8.448455e-01
+[1251] 9.986794e-01 9.803824e-01 9.578644e-01 9.962830e-01 8.581581e-01
+[1256] 8.581581e-01 8.581581e-01 9.962830e-01 7.118651e-01 6.940395e-01
+[1261] 9.008583e-01 9.909619e-01 9.909619e-01 8.524128e-01 9.534904e-01
+[1266] 9.534904e-01 9.802892e-01 9.802892e-01 9.802892e-01 8.553279e-01
+[1271] 7.108724e-01 9.911111e-01 9.558195e-01 9.794640e-01 9.284077e-01
+[1276] 9.794640e-01 9.801956e-01 9.801956e-01 9.833958e-01 9.548970e-01
+[1281] 9.250220e-01 9.801956e-01 9.960950e-01 9.801956e-01 2.968142e-01
+[1286] 9.558195e-01 9.250220e-01 9.558195e-01 9.801015e-01 9.801015e-01
+[1291] 9.801015e-01 9.806163e-01 9.808641e-01 9.839581e-01 9.808641e-01
+[1296] 7.180172e-01 9.307009e-01 9.808641e-01 9.808641e-01 9.808641e-01
+[1301] 9.808641e-01 9.808641e-01 9.808641e-01 9.570769e-01 9.638753e-01
+[1306] 9.285378e-01 9.570769e-01 9.570769e-01 9.913731e-01 9.570769e-01
+[1311] 9.570769e-01 9.638753e-01 9.638753e-01 9.570769e-01 9.638753e-01
+[1316] 9.570769e-01 9.913731e-01 9.807732e-01 9.570769e-01 9.570769e-01
+[1321] 9.970573e-01 9.935682e-01 8.751550e-01 8.751550e-01 8.746258e-01
+[1326] 8.367486e-01 7.491720e-01 9.932265e-01 8.285747e-02 4.437911e-03
+[1331] 3.425111e-02 3.425111e-02 3.000448e-01 6.277343e-02 4.936226e-01
+[1336] 1.947290e-01 2.183460e-02 2.183460e-02 2.002797e-01 2.002797e-01
+[1341] 2.002797e-01 2.002797e-01 2.305805e-01 1.939720e-01 2.544434e-01
+[1346] 1.987354e-01 7.197970e-02 2.535273e-01 1.917143e-01 1.972000e-01
+[1351] 2.489795e-01 1.076916e-01 1.941562e-01 4.411134e-01 1.831043e-01
+[1356] 9.140543e-02 1.053905e-01 2.229030e-01 3.799270e-01 8.566492e-02
+[1361] 1.926046e-01 1.290323e-02 1.911053e-01 6.760193e-01 1.852392e-01
+[1366] 1.852392e-01 2.447330e-02 9.018514e-02 3.158581e-01 2.716039e-02
+[1371] 5.770242e-02 1.823381e-01 8.359528e-02 1.757692e-01 1.809008e-01
+[1376] 2.130148e-01 1.736777e-01 1.773463e-01 3.927829e-02 1.709197e-01
+[1381] 2.342102e-02 3.607634e-01 3.607634e-01 3.607634e-01 1.702356e-01
+[1386] 2.232947e-01 2.331069e-02 4.613580e-01 1.695537e-01 8.167823e-02
+[1391] 1.752400e-01 2.350627e-02 4.490761e-01 9.979047e-02 3.017321e-01
+[1396] 9.723890e-02 2.003786e-01 5.290576e-02 1.796050e-01 3.100442e-01
+[1401] 1.635144e-01 1.506969e-02 2.052140e-01 9.016194e-02 1.621961e-01
+[1406] 2.136137e-02 1.643385e-01 1.643385e-01 4.856139e-01 4.128206e-02
+[1411] 4.168681e-03 1.904970e-01 1.541664e-01 7.232698e-02 1.570084e-01
+[1416] 7.461599e-01 1.882703e-01 1.980116e-01 3.425111e-02 5.688871e-02
+[1421] 1.912008e-01 1.783431e-01 1.603933e-01 1.590953e-01 4.759586e-01
+[1426] 7.087742e-01 7.087742e-01 1.510404e-01 7.072163e-02 3.138053e-02
+[1431] 1.584495e-01 1.048599e-01 1.048599e-01 1.578059e-01 1.485772e-01
+[1436] 7.087243e-02 6.946112e-02 3.094262e-02 1.558877e-01 2.701577e-03
+[1441] 3.345143e-02 7.485174e-02 7.055471e-02 1.720556e-01 8.275576e-03
+[1446] 6.925140e-03 2.349341e-02 6.852941e-02 1.494811e-01 1.527330e-01
+[1451] 2.641840e-02 6.074187e-02 5.127245e-02 5.446394e-02 1.381044e-02
+[1456] 5.777752e-02 9.461052e-01 7.156590e-02 4.850973e-02 2.167304e-02
+[1461] 2.384348e-02 4.568955e-02 4.724113e-02 1.844604e-01 5.524797e-02
+[1466] 4.616487e-02 1.065099e-02 4.244389e-02 4.322542e-02 4.543285e-03
+[1471] 3.109597e-03 8.486838e-03 2.338467e-02 1.701597e-06 9.842526e-05
+[1476] 5.174488e-02 2.334859e-02 4.982375e-02 2.348966e-01 2.334859e-02
+[1481] 2.654304e-02 3.894615e-02 4.959536e-02 5.268825e-02 9.458149e-03
+[1486] 1.669869e-02 2.654304e-02 4.858559e-02 3.159734e-02 5.150815e-02
+[1491] 1.542350e-02 5.127245e-02 5.127245e-02 3.200965e-02 2.404697e-02
+[1496] 1.558796e-01 1.448467e-02 5.127245e-02 5.127245e-02 4.891611e-02
+[1501] 5.797693e-02 1.182171e-02 1.233678e-02 2.097645e-02 5.173126e-02
+[1506] 5.173126e-02 4.869166e-02 4.869166e-02 1.131084e-02 1.372879e-02
+[1511] 3.670788e-02 6.262066e-02 1.421117e-02 3.072163e-02 5.010918e-02
+[1516] 5.298917e-02 4.987954e-02 4.704480e-02 2.568242e-02 4.987954e-02
+[1521] 4.987954e-02 1.467408e-01 4.780360e-02 2.657349e-02 2.657349e-02
+[1526] 1.825878e-03 3.242028e-03 5.667063e-02 4.942326e-02 3.895297e-03
+[1531] 3.029264e-02 4.758400e-02 2.175663e-02 4.942326e-02 5.250601e-02
+[1536] 3.014724e-02 4.919661e-02 2.165396e-02 4.897094e-02 2.620086e-02
+[1541] 2.723654e-03 6.344130e-03 4.874625e-02 4.671516e-02 5.897653e-03
+[1546] 1.456677e-02 1.456677e-02 4.852254e-02 5.751487e-02 1.738128e-02
+[1551] 4.852254e-02 3.085643e-03 1.308928e-02 2.381022e-03 4.542195e-03
+[1556] 4.807804e-02 5.763840e-02 4.918363e-02 4.628641e-02 5.108140e-02
+[1561] 5.108140e-02 1.027054e-03 2.931410e-02 5.802613e-02 4.895801e-02
+[1566] 5.587344e-03 5.587344e-03 5.802613e-02 8.814626e-04 4.607344e-02
+[1571] 3.041344e-03 1.290323e-02 5.038288e-02 1.422379e-02 4.850973e-02
+[1576] 5.596238e-02 5.596238e-02 5.596238e-02 3.199245e-03 2.075104e-02
+[1581] 8.029708e-03 4.544012e-02 4.698366e-02 4.762482e-02 2.594652e-02
+[1586] 4.481510e-02 4.481510e-02 1.117400e-05 2.345262e-02 2.836276e-02
+[1591] 4.633843e-02 4.633843e-02 4.633843e-02 2.570521e-03 2.370393e-02
+[1596] 5.469884e-02 1.064151e-02 5.543917e-02 5.543917e-02 1.930510e-02
+[1601] 1.236058e-02 5.219369e-02 1.878555e-03 4.675527e-02 1.236058e-02
+[1606] 3.278956e-01 4.399448e-02 4.549124e-02 2.273803e-03 1.310092e-02
+[1611] 4.632617e-02 1.303855e-02 4.358956e-02 4.785215e-06 7.243747e-02
+[1616] 5.171739e-02 1.224309e-02 1.224309e-02 1.235817e-03 4.358956e-02
+[1621] 9.833499e-03 2.929928e-03 4.338844e-02 2.025993e-02 1.297648e-02
+[1626] 1.813895e-03 5.468449e-02 1.454582e-02 7.653611e-03 1.255350e-02
+[1631] 4.465882e-02 4.465882e-02 1.029102e-02 4.034676e-02 4.445299e-02
+[1636] 1.657367e-03 1.228969e-02 4.244389e-02 5.350779e-02 1.268521e-02
+[1641] 1.268521e-02 4.511197e-02 1.860776e-02 2.271751e-02 3.225531e-03
+[1646] 5.148733e-03 4.239604e-02 5.031303e-02 2.261042e-02 4.506126e-02
+[1651] 4.404405e-02 6.504580e-03 2.451982e-02 1.317889e-02 6.504580e-03
+[1656] 4.680779e-02 1.317889e-02 3.828890e-03 5.680242e-03 4.680779e-02
+[1661] 5.550088e-02 5.550088e-02 4.220019e-02 4.220019e-02 4.220019e-02
+[1666] 1.038712e-02 4.220019e-02 1.354508e-01 6.105464e-03 5.201307e-02
+[1671] 9.493654e-02 2.276477e-03 4.384092e-02 6.161039e-02 2.425976e-03
+[1676] 3.810493e-03 5.095671e-02 1.470213e-02 5.652999e-03 1.243261e-03
+[1681] 1.470213e-02 5.201307e-02 5.201307e-02 8.862832e-03 1.201435e-04
+[1686] 4.384092e-02 1.311616e-02 4.384092e-02 1.211486e-02 7.284251e-02
+[1691] 2.440444e-02 1.225734e-02 4.200519e-02 2.195135e-02 4.200519e-02
+[1696] 4.343735e-02 4.343735e-02 6.411514e-03 8.778291e-03 4.343735e-02
+[1701] 5.474541e-02 4.343735e-02 4.343735e-02 2.776690e-01 2.306831e-02
+[1706] 8.736320e-03 2.391125e-03 1.214081e-02 4.323690e-02 4.323690e-02
+[1711] 4.085320e-02 4.342582e-02 4.244389e-02 1.191104e-02 4.066417e-02
+[1716] 2.692753e-02 4.066417e-02 5.128899e-02 4.066417e-02 1.621961e-01
+[1721] 4.010208e-02 2.612607e-01 2.612607e-01 1.196480e-02 4.284197e-02
+[1726] 5.901675e-03 2.093696e-02 1.112719e-02 1.185102e-02 1.851462e-02
+[1731] 1.739096e-02 3.973150e-02 2.179149e-03 1.782954e-02 4.071014e-02
+[1736] 3.881935e-02 4.588844e-02 3.863935e-02 3.863935e-02 3.863935e-02
+[1741] 1.996086e-03 3.863935e-02 3.863935e-02 3.863935e-02 2.056926e-02
+[1746] 8.548226e-04 9.480555e-04 1.757730e-02 4.014745e-02 4.853824e-02
+[1751] 2.439933e-02 1.076088e-02 4.248050e-02 4.248050e-02 1.070953e-02
+[1756] 1.674217e-02 2.520000e-03 4.208890e-02 4.995153e-02 2.108628e-02
+[1761] 4.701131e-02 3.959221e-02 6.961214e-03 2.512833e-02 3.959221e-02
+[1766] 3.940877e-02 3.410830e-03 4.657998e-02 1.098150e-02 1.590953e-01
+[1771] 4.170076e-02 7.593176e-03 1.650506e-02 4.103550e-03 4.615242e-02
+[1776] 3.886333e-02 3.705500e-02 1.035682e-02 1.552004e-04 2.431243e-02
+[1781] 2.895461e-02 5.631278e-03 1.072202e-02 4.074532e-02 4.074532e-02
+[1786] 4.917067e-03 1.072202e-02 4.435250e-03 1.611719e-02 3.688286e-02
+[1791] 6.438802e-03 2.974086e-03 5.174768e-02 3.814734e-02 3.814734e-02
+[1796] 3.814734e-02 3.814734e-02 1.943233e-02 1.934042e-02 3.562045e-02
+[1801] 3.637106e-02 9.962422e-02 1.616399e-01 2.228932e-01 1.850111e-01
+[1806] 2.119991e-01 1.792499e-01 9.036876e-02 1.772976e-01 1.337171e-01
+[1811] 8.263912e-02 1.978246e-01 2.313576e-02 1.582480e-01 1.435970e-01
+[1816] 1.119450e-01 1.343918e-02 1.007024e-01 1.043698e-01 2.418587e-01
+[1821] 3.534330e-01 5.904137e-03 1.002654e-01 2.328937e-01 2.088788e-01
+[1826] 2.023688e-01 9.983004e-02 4.704562e-02 2.015895e-01 2.320310e-01
+[1831] 1.979496e-02 2.497716e-03 2.320310e-01 2.655405e-01 1.166608e-01
+[1836] 9.939639e-02 2.057010e-01 1.984947e-01 9.767851e-02 3.367781e-01
+[1841] 1.008091e-01 2.041255e-01 1.008091e-01 2.277512e-01 1.977266e-01
+[1846] 1.977266e-01 2.165396e-02 2.883687e-02 1.381044e-02 9.090179e-03
+[1851] 9.863879e-02 1.157886e-01 6.140777e-02 1.939198e-01 2.562185e-01
+[1856] 9.249024e-02 2.182836e-02 1.171733e-02 9.249024e-02 9.208522e-02
+[1861] 1.082324e-01 3.262843e-02 1.098643e-01 1.971876e-02 2.823032e-02
+[1866] 2.262611e-01 1.586587e-02 8.291540e-03 9.651019e-02 9.567029e-02
+[1871] 1.879450e-01 2.168858e-01 4.481510e-02 1.879450e-01 2.555222e-01
+[1876] 5.988662e-03 9.218374e-02 9.958258e-02 8.851116e-02 1.850111e-01
+[1881] 2.136190e-01 9.318971e-02 1.032050e-01 1.835575e-01 1.349598e-02
+[1886] 1.835575e-01 4.288399e-02 8.948100e-02 2.435330e-01 2.771325e-01
+[1891] 2.111925e-01 1.828341e-01 2.095861e-01 1.813937e-01 1.813937e-01
+[1896] 6.726206e-02 8.830624e-02 2.095861e-01 2.408708e-01 8.830624e-02
+[1901] 2.095861e-01 4.298885e-02 8.830624e-02 1.076354e-01 1.249371e-02
+[1906] 1.794232e-01 2.073869e-01 8.581843e-02 2.477734e-02 2.575890e-02
+[1911] 1.851888e-01 1.851888e-01 8.676157e-02 2.793109e-01 3.974174e-02
+[1916] 2.118914e-02 1.844604e-01 2.130053e-01 8.782843e-02 1.071702e-01
+[1921] 2.506804e-02 9.967963e-02 8.918349e-02 8.918349e-02 1.830101e-01
+[1926] 8.744186e-02 3.937435e-02 1.506867e-02 2.001365e-01 1.729371e-01
+[1931] 1.729371e-01 8.137462e-02 2.358185e-01 9.459233e-02 8.154615e-02
+[1936] 1.688271e-01 1.661306e-01 8.110166e-02 1.710393e-01 7.783273e-02
+[1941] 1.964805e-01 1.902639e-01 1.957182e-01 8.163441e-02 3.130124e-02
+[1946] 1.904455e-01 1.843761e-01 2.130132e-02 1.829263e-01 1.829263e-01
+[1951] 7.526083e-02 7.738892e-02 1.565169e-01 5.830757e-02 1.181451e-01
+[1956] 6.659466e-02 2.341371e-01 1.162660e-01 2.343484e-01 1.147839e-01
+[1961] 5.070225e-02 1.182095e-01 2.075405e-01 1.565169e-01 1.809832e-01
+[1966] 1.280569e-01 3.285236e-01 1.709985e-01 1.753204e-01 2.476111e-01
+[1971] 1.583666e-01 2.369610e-01 3.150674e-01 1.135740e-01 3.789725e-02
+[1976] 1.075051e-01 5.919359e-02 1.202403e-01 5.523451e-02 2.091354e-01
+[1981] 1.651653e-01 9.771706e-02 9.771706e-02 3.568659e-01 5.643789e-01
+[1986] 5.643789e-01 9.816889e-01 7.589305e-01 7.352990e-01 7.148311e-01
+[1991] 5.319045e-01 9.829481e-01 9.091544e-01 9.816889e-01 7.187570e-01
+[1996] 9.591739e-01 8.811851e-01 8.811851e-01 7.197334e-01 8.465926e-01
+[2001] 9.619544e-01 9.566402e-01 9.961510e-01 9.103453e-01 6.511978e-01
+[2006] 9.825381e-01 9.365625e-01 9.925629e-01 9.918922e-01 9.965213e-01
+[2011] 9.911758e-01 8.764321e-01 9.700353e-01 9.963143e-01 9.801015e-01
+[2016] 9.806818e-01 9.960950e-01 9.962244e-01 9.289481e-01 9.571329e-01
+[2021] 9.912702e-01 9.962062e-01 9.964193e-01 8.607709e-01 9.823270e-01
+[2026] 9.962244e-01 9.962244e-01 9.915078e-01 1.902639e-01 9.969181e-01
+[2031] 9.962244e-01 8.825796e-01 9.352819e-01 9.295837e-01 9.961324e-01
+[2036] 9.279847e-01 9.962426e-01 9.277399e-01 8.520107e-01 9.968618e-01
+[2041] 9.959416e-01 9.821184e-01 8.666871e-01 9.842423e-01 9.842423e-01
+[2046] 9.962062e-01 9.814677e-01 9.565828e-01 9.907428e-01 8.451785e-01
+[2051] 9.921222e-01 9.824311e-01 9.330601e-01 9.907428e-01 9.683650e-01
+[2056] 9.639228e-01 9.801956e-01 9.286283e-01 9.801956e-01 8.479880e-01
+[2061] 9.294943e-01 9.316053e-01 9.107391e-01 9.295837e-01 9.961324e-01
+[2066] 9.810229e-01 9.808420e-01 9.808420e-01 6.241074e-01 9.962786e-01
+[2071] 9.808420e-01 9.596390e-01 9.807509e-01 9.561300e-01 9.913018e-01
+[2076] 9.321484e-01 9.321484e-01 9.321484e-01 9.426586e-01 9.963143e-01
+[2081] 9.236696e-01 9.246860e-01 9.962062e-01 9.583075e-01 9.926857e-01
+[2086] 9.591633e-01 9.914864e-01 8.479880e-01 8.479880e-01 9.914554e-01
+[2091] 8.572469e-01 9.925650e-01 9.925650e-01 9.604686e-01 9.962244e-01
+[2096] 9.915370e-01 8.461088e-01 9.933705e-01 9.914043e-01 9.915370e-01
+[2101] 9.915370e-01 9.915370e-01 9.628294e-01 8.982597e-01 9.964193e-01
+[2106] 9.964193e-01 4.553951e-01 9.869380e-01 9.910051e-01 9.912180e-01
+[2111] 9.811345e-01 7.220273e-01 9.814677e-01 9.816428e-01 9.808420e-01
+[2116] 9.810448e-01 9.814677e-01 9.814677e-01 9.869587e-01 9.807509e-01
+[2121] 9.807509e-01 9.319874e-01 8.458101e-01 4.997225e-01 9.811345e-01
+[2126] 9.811345e-01 9.812021e-01 9.812021e-01 9.812021e-01 9.842423e-01
+[2131] 9.812021e-01 9.700949e-01 9.915078e-01 9.913848e-01 8.426309e-01
+[2136] 9.910481e-01 8.544437e-01 9.578168e-01 9.302140e-01 9.701516e-01
+[2141] 9.972046e-01 9.915078e-01 9.273358e-01 9.273358e-01 9.917673e-01
+[2146] 9.574724e-01 9.580118e-01 9.528713e-01 8.492303e-01 9.566779e-01
+[2151] 9.589735e-01 9.603081e-01 8.344325e-01 8.492303e-01 9.570285e-01
+[2156] 8.473637e-01 9.580118e-01 9.580118e-01 9.580118e-01 9.580118e-01
+[2161] 9.912380e-01 9.969032e-01 9.969032e-01 9.920102e-01 8.630621e-01
+[2166] 9.601449e-01 8.522995e-01 9.585914e-01 8.522995e-01 9.914864e-01
+[2171] 8.541162e-01 9.601449e-01 8.486102e-01 9.911536e-01 8.572469e-01
+[2176] 9.916578e-01 8.541162e-01 8.522995e-01 9.578644e-01 8.486102e-01
+[2181] 8.486102e-01 9.584460e-01 9.584460e-01 9.584460e-01 9.619544e-01
+[2186] 9.152500e-01 9.619544e-01 8.630621e-01 9.601449e-01 9.601449e-01
+[2191] 9.601449e-01 9.379999e-01 9.601449e-01 9.601449e-01 8.572469e-01
+[2196] 8.541162e-01 9.585914e-01 9.576211e-01 9.926319e-01 9.576211e-01
+[2201] 9.816428e-01 9.912702e-01 8.445448e-01 5.954825e-01 9.270093e-01
+[2206] 9.968123e-01 9.295837e-01 9.295837e-01 9.708103e-01 9.246860e-01
+[2211] 9.798166e-01 9.962062e-01 9.803824e-01 9.965213e-01 9.816428e-01
+[2216] 9.810229e-01 9.914260e-01 9.915078e-01 9.916691e-01 9.684501e-01
+[2221] 9.567344e-01 9.577241e-01 8.495556e-01 9.928933e-01 9.577241e-01
+[2226] 8.574247e-01 9.738687e-01 6.971108e-01 9.692156e-01 9.724806e-01
+[2231] 9.697529e-01 5.998497e-01 9.583546e-01 7.001647e-01 8.459636e-01
+[2236] 9.912702e-01 9.577241e-01 9.912702e-01 8.495556e-01 4.997225e-01
+[2241] 8.495556e-01 9.797083e-01 8.515490e-01 9.915078e-01 9.596390e-01
+[2246] 8.547171e-01 9.912702e-01 9.569826e-01 9.939129e-01 8.451785e-01
+[2251] 9.684501e-01 9.033282e-01 9.584460e-01 9.628294e-01 8.529072e-01
+[2256] 9.054188e-01 9.800395e-01 9.558195e-01 9.914554e-01 9.914554e-01
+[2261] 8.658942e-01 8.658942e-01 8.522995e-01 8.397074e-01 8.504642e-01
+[2266] 8.504642e-01 9.528713e-01 9.911111e-01 9.914864e-01 9.549956e-01
+[2271] 8.935433e-01 9.566291e-01 9.566291e-01 9.578168e-01 8.713472e-01
+[2276] 8.473637e-01 9.695964e-01 8.691635e-01 8.473637e-01 8.504642e-01
+[2281] 8.529072e-01 8.529072e-01 9.589735e-01 9.599141e-01 9.572269e-01
+[2286] 9.697386e-01 9.566291e-01 6.188077e-01 9.033282e-01 8.344325e-01
+[2291] 9.390478e-01 9.914864e-01 9.913630e-01 9.326676e-01 9.608784e-01
+[2296] 9.203551e-01 9.592094e-01 9.326676e-01 9.578644e-01 9.921620e-01
+[2301] 9.643557e-01 9.628093e-01 9.549956e-01 9.918163e-01 8.410047e-01
+[2306] 9.560232e-01 9.690210e-01 9.604686e-01 9.604686e-01 9.604686e-01
+[2311] 9.604686e-01 8.498483e-01 8.498483e-01 9.695964e-01 9.580118e-01
+[2316] 8.553169e-01 8.529072e-01 8.565095e-01 9.576211e-01 9.572269e-01
+[2321] 9.914454e-01 9.547601e-01 9.628294e-01 9.628294e-01 9.054188e-01
+[2326] 8.512273e-01 9.911959e-01 9.580118e-01 9.580118e-01 9.580118e-01
+[2331] 9.915271e-01 9.917673e-01 8.416501e-01 9.585914e-01 9.963143e-01
+[2336] 9.145924e-01 9.817297e-01 9.569341e-01 8.486102e-01 8.458101e-01
+[2341] 9.569826e-01 9.803703e-01 7.199709e-01 7.128558e-01 9.171992e-01
+[2346] 8.743157e-01 8.743157e-01 8.666871e-01 7.118651e-01 9.805242e-01
+[2351] 4.404370e-01 9.961510e-01 7.312864e-01 8.410047e-01 8.522995e-01
+[2356] 8.473637e-01 9.576211e-01 9.916880e-01 9.374172e-01 9.962062e-01
+[2361] 9.399236e-01 8.597059e-01 8.648726e-01 9.921222e-01 9.399236e-01
+[2366] 9.916691e-01 8.400493e-01 9.915078e-01 9.962244e-01 8.706819e-01
+[2371] 9.965067e-01 9.965067e-01 9.680039e-01 9.865158e-01 9.916691e-01
+[2376] 9.865158e-01 9.600571e-01 9.962470e-01 9.974875e-01 9.964193e-01
+[2381] 9.861405e-01 9.962965e-01 7.181291e-01 8.002910e-01 6.940395e-01
+[2386] 9.933162e-01 9.920080e-01 9.914940e-01 9.917352e-01 8.658620e-01
+[2391] 9.930171e-01 7.324663e-01 9.920462e-01 8.578037e-01 9.809805e-01
+[2396] 9.274901e-01 9.887065e-01 9.886754e-01 9.270093e-01 3.757605e-02
+[2401] 9.444150e-01 8.654611e-01 2.927936e-01 9.580118e-01 9.750595e-01
+[2406] 9.326676e-01 9.589735e-01 8.582829e-01 8.448455e-01 8.479880e-01
+[2411] 8.535127e-01 4.233029e-01 7.076958e-01 8.607709e-01 9.695358e-01
+[2416] 9.604686e-01 9.916079e-01 7.156325e-01 5.969148e-01 5.957509e-01
+[2421] 9.005837e-01 9.909824e-01 7.106873e-01 7.106873e-01 7.036791e-01
+[2426] 9.311335e-01 8.467373e-01 8.594551e-01 8.565095e-01 8.486102e-01
+[2431] 8.486102e-01 8.486102e-01 8.504642e-01 8.504642e-01 8.568217e-01
+[2436] 9.909391e-01 8.435737e-01 7.577590e-02 8.479880e-01 9.914454e-01
+[2441] 8.397074e-01 8.454782e-01 9.538165e-01 9.585914e-01 9.643557e-01
+[2446] 8.397074e-01 8.516899e-01 9.599141e-01 9.356411e-01 5.957509e-01
+[2451] 1.512878e-02 9.908518e-01 9.332723e-01 9.798495e-01 8.479880e-01
+[2456] 2.020888e-02 8.473637e-01 8.454782e-01 8.492303e-01 9.341699e-01
+[2461] 8.429346e-01 9.603081e-01 9.912380e-01 9.912380e-01 9.914043e-01
+[2466] 9.384920e-01 5.992392e-01 8.510781e-01 9.802278e-01 8.493811e-01
+[2471] 8.448455e-01 8.448455e-01 9.341699e-01 8.492303e-01 8.448455e-01
+[2476] 8.410047e-01 3.323877e-02 9.910255e-01 8.565095e-01 8.541162e-01
+[2481] 8.708042e-01 9.341699e-01 9.341699e-01 8.492303e-01 9.301975e-01
+[2486] 9.576688e-01 6.996307e-01 9.827899e-01 7.066947e-01 3.878008e-01
+[2491] 8.535127e-01 8.397074e-01 8.516899e-01 6.965737e-01 6.986136e-01
+[2496] 7.036791e-01 7.301753e-01 9.928793e-01 8.461088e-01 8.492303e-01
+[2501] 3.029044e-01 8.410047e-01 9.914043e-01 9.342423e-01 7.754373e-01
+[2506] 9.314429e-01 8.547176e-01 8.499986e-01 9.314429e-01 8.492303e-01
+[2511] 8.535127e-01 9.269921e-01 8.516899e-01 8.504642e-01 9.914043e-01
+[2516] 9.914043e-01 9.564280e-01 8.516899e-01 8.691635e-01 2.018323e-02
+[2521] 8.429346e-01 6.996307e-01 8.410047e-01 9.566779e-01 9.566779e-01
+[2526] 9.690210e-01 8.498483e-01 9.585914e-01 9.572269e-01 6.041564e-01
+[2531] 7.425865e-01 9.587829e-01 9.541570e-01 9.686672e-01 6.084916e-01
+[2536] 5.099642e-01 8.435737e-01 9.297333e-01 9.384920e-01 9.803213e-01
+[2541] 9.566291e-01 9.058320e-01 8.479880e-01 8.492303e-01 9.917747e-01
+[2546] 9.830058e-01 9.962965e-01 9.962965e-01 9.962244e-01 9.962244e-01
+[2551] 9.962244e-01 9.962244e-01 9.664720e-01 9.865431e-01 9.960950e-01
+[2556] 9.960950e-01 9.964193e-01 9.961695e-01 8.354492e-01 9.565828e-01
+[2561] 2.300270e-01 9.810229e-01 9.961695e-01 6.201597e-01 8.544437e-01
+[2566] 9.571329e-01 8.542283e-01 9.914864e-01 8.702593e-01 7.976257e-02
+[2571] 4.593934e-02 4.528203e-01 1.602347e-01 1.544656e-01 1.597432e-01
+[2576] 1.532069e-01 1.482558e-01 1.464335e-01 1.903154e-01 1.621961e-01
+[2581] 1.544656e-01 2.080993e-02 6.021155e-03 3.130334e-02 4.225634e-01
+[2586] 3.219507e-02 7.248094e-02 9.504847e-03 9.083903e-03 9.083903e-03
+[2591] 9.083903e-03 1.524994e-03 2.085646e-02 9.270463e-03 1.582738e-02
+[2596] 9.259651e-03 9.083903e-03 1.691707e-02 4.032344e-02 4.165371e-02
+[2601] 3.639116e-02 1.765617e-02 1.179453e-02 3.940877e-02 3.940877e-02
+[2606] 3.918178e-02 2.027907e-02 3.740159e-02 3.881935e-02 4.921251e-02
+[2611] 4.146113e-02 1.103810e-01 2.037535e-02 4.450889e-04 1.510341e-03
+[2616] 4.032344e-02 3.688286e-02 4.300214e-01 7.161824e-03 6.925140e-03
+[2621] 4.323690e-02 5.130250e-02 3.846015e-02 2.316484e-02 1.682195e-02
+[2626] 1.086430e-02 3.654090e-02 5.817184e-03 2.747963e-02 2.166850e-02
+[2631] 2.166850e-02 1.449349e-02 8.776425e-03 3.620198e-02 9.032422e-03
+[2636] 4.350667e-03 1.952468e-02 1.952468e-02 3.671150e-02 3.863935e-02
+[2641] 3.863935e-02 3.810414e-02 2.136313e-02 2.008784e-02 1.989837e-02
+[2646] 5.597709e-03 1.045641e-02 5.309315e-03 2.931384e-03 1.809751e-02
+[2651] 1.897700e-02 2.106198e-02 9.946438e-03 3.757605e-02 1.504816e-02
+[2656] 1.989837e-02 1.971066e-02 1.642676e-02 1.943233e-02 3.586610e-02
+[2661] 3.709705e-02 3.775129e-02 3.569928e-02 2.047208e-02 7.196285e-03
+[2666] 1.980430e-02 3.792732e-02 3.954744e-02 1.060756e-02 7.477966e-03
+[2671] 2.106198e-02 1.091638e-02 2.066689e-02 1.649033e-03 1.961745e-02
+[2676] 1.989837e-02 3.654090e-02 2.383044e-02 2.383044e-02 1.581336e-02
+[2681] 3.671150e-02 3.757605e-02 4.631368e-02 3.918178e-02 3.792732e-02
+[2686] 3.918178e-02 9.114422e-02 3.828175e-02 3.757605e-02 2.018323e-02
+[2691] 2.008784e-02 3.775129e-02 1.886412e-02 2.011103e-02 1.698263e-02
+[2696] 2.037535e-02 1.619404e-02 3.556806e-03 1.640980e-03 4.323690e-02
+[2701] 1.924893e-02 3.792732e-02 1.011195e-02 1.011195e-02 3.407171e-02
+[2706] 2.106198e-02 1.139636e-02 4.402046e-02 3.757605e-02 3.705500e-02
+[2711] 1.952468e-02 2.327450e-02 3.503945e-02 1.658373e-02 3.775129e-02
+[2716] 3.503945e-02 3.792732e-02 4.504909e-02 1.714482e-02 6.329211e-07
+[2721] 1.911252e-03 9.842526e-05 2.974086e-03 1.588879e-02 6.689664e-02
+[2726] 1.634882e-02 9.074450e-02 3.569928e-02 4.323690e-02 4.104308e-02
+[2731] 3.569928e-02 3.569928e-02 1.050655e-02 4.361531e-02 5.438524e-03
+[2736] 1.581336e-02 8.671411e-01 1.959350e-02 3.881935e-02 3.779411e-02
+[2741] 3.654090e-02 1.055694e-02 7.477966e-03 7.477966e-03 7.477966e-03
+[2746] 5.222425e-02 3.407171e-02 2.187444e-02 2.187444e-02 1.254656e-02
+[2751] 4.104308e-02 1.952468e-02 1.999288e-02 1.676073e-01 1.532069e-01
+[2756] 1.760295e-01 3.740159e-02 1.597432e-01 1.582925e-01 1.596457e-02
+[2761] 3.722791e-02 2.859341e-03 6.023278e-03 2.086352e-02 2.486395e-02
+[2766] 2.086352e-02 1.924893e-02 2.294703e-02 3.671150e-02 3.810414e-02
+[2771] 3.954744e-02 1.980430e-02 3.954744e-02 3.954744e-02 3.775129e-02
+[2776] 1.045641e-02 8.916135e-02 3.740159e-02 1.694440e-02 1.035682e-02
+[2781] 3.569928e-02 1.927342e-02 3.918178e-02 2.486395e-02 4.301426e-02
+[2786] 2.606355e-02 4.442919e-02 3.705500e-02 3.918178e-02 3.918178e-02
+[2791] 1.190445e-02 8.651136e-03 1.532069e-01 1.989837e-02 7.478941e-02
+[2796] 2.294703e-02 3.900016e-02 3.536788e-02 3.918178e-02 1.897700e-02
+[2801] 1.897700e-02 4.543285e-03 1.971066e-02 4.402046e-02 1.999288e-02
+[2806] 2.011103e-02 3.654090e-02 3.620198e-02 3.671150e-02 3.671150e-02
+[2811] 3.671150e-02 3.863935e-02 4.010208e-02 3.740159e-02 1.987408e-02
+[2816] 1.658373e-02 3.792732e-02 3.620198e-02 1.971066e-02 3.620198e-02
+[2821] 7.161824e-03 5.560549e-02 1.050655e-02 4.565204e-03 7.161824e-03
+[2826] 5.517546e-03 3.954744e-02 1.050655e-02 1.248680e-02 3.306770e-03
+[2831] 2.439933e-02 1.634882e-02 3.775129e-02 1.924893e-02 1.897700e-02
+[2836] 1.604070e-02 1.897700e-02 3.814734e-02 8.897570e-02 1.214081e-02
+[2841] 8.647081e-02 1.092611e-02 3.995090e-02 4.372149e-02 1.070953e-02
+[2846] 1.086430e-02 3.881935e-02 2.008784e-02 2.008784e-02 5.218282e-05
+[2851] 2.086352e-02 1.627125e-02 1.940860e-02 1.730853e-02 2.394317e-02
+[2856] 4.351979e-02 2.635819e-02 2.016889e-01 1.851043e-01 1.888644e-01
+[2861] 1.582480e-01 9.273478e-02 6.323447e-01 1.563255e-01 8.283208e-02
+[2866] 8.010934e-02 3.828175e-02 7.939963e-02 3.792732e-02 4.314917e-03
+[2871] 4.104308e-02 3.810414e-02 3.722791e-02 1.040650e-02 9.237576e-02
+[2876] 7.476630e-02 7.526083e-02 7.939963e-02 8.127266e-02 8.118476e-02
+[2881] 8.118476e-02 8.913798e-02 9.933782e-03 7.765044e-02 7.392585e-02
+[2886] 9.437480e-02 9.112038e-02 9.478885e-02 7.765044e-02 8.685495e-02
+[2891] 1.108744e-01 1.292795e-01 5.112600e-02 1.011809e-01 1.187144e-01
+[2896] 1.011809e-01 1.011809e-01 1.011809e-01 1.011809e-01 1.187144e-01
+[2901] 1.011809e-01 1.011809e-01 9.857297e-02 1.147270e-01 9.857297e-02
+[2906] 9.814419e-02 1.043006e-01 1.429127e-01 1.223012e-01 1.217831e-01
+[2911] 1.152189e-01 2.742553e-02 2.248430e-01 2.109353e-01 2.394916e-01
+[2916] 2.394916e-01 2.190951e-01 2.190951e-01 2.107393e-01 2.421434e-01
+[2921] 2.131620e-01 2.091354e-01 5.365055e-01 4.680667e-01 8.704241e-01
+[2926] 8.704241e-01 9.841758e-01 9.841758e-01 9.394055e-01 9.841758e-01
+[2931] 9.841758e-01 9.841758e-01 9.637215e-01 9.841004e-01 9.427684e-01
+[2936] 8.647673e-01 9.440589e-01 9.885730e-01 9.693267e-01 9.837177e-01
+[2941] 9.837177e-01 9.693267e-01 8.278018e-01 9.837949e-01 9.927413e-01
+[2946] 9.837949e-01 9.968141e-01 9.834050e-01 9.834050e-01 9.738319e-01
+[2951] 9.374501e-01 9.625735e-01 9.967832e-01 8.675696e-01 9.836400e-01
+[2956] 9.836400e-01 9.836400e-01 9.967832e-01 9.967832e-01 9.438030e-01
+[2961] 9.967832e-01 9.967832e-01 9.967832e-01 9.836400e-01 9.798311e-01
+[2966] 8.831951e-01 9.931538e-01 9.371660e-01 9.973233e-01 8.681241e-01
+[2971] 9.377330e-01 9.423982e-01 8.590127e-01 8.590127e-01 7.379385e-01
+[2976] 9.377330e-01 6.416120e-01 4.494063e-01 3.116655e-02 9.641892e-01
+[2981] 9.844395e-01 8.851755e-01 9.641892e-01 9.888961e-01 9.841758e-01
+[2986] 9.841758e-01 9.394055e-01 9.966568e-01 8.703225e-01 8.703225e-01
+[2991] 9.653396e-01 9.653396e-01 7.480927e-01 9.708691e-01 6.778615e-01
+[2996] 9.968598e-01 9.388527e-01 9.388527e-01 9.968598e-01 7.536873e-01
+[3001] 7.399775e-01 9.828435e-01 9.969198e-01 9.404828e-01 8.824289e-01
+[3006] 9.731221e-01 9.351433e-01 9.631739e-01 9.928106e-01 9.973618e-01
+[3011] 9.834837e-01 9.830864e-01 9.758469e-01 9.846944e-01 9.931476e-01
+[3016] 9.871772e-01 9.846944e-01 9.931476e-01 9.935682e-01 9.970573e-01
+[3021] 9.850922e-01 9.868047e-01 9.841758e-01 7.453494e-01 8.692272e-01
+[3026] 8.692272e-01 9.930877e-01 8.670131e-01 9.504710e-01 5.523731e-01
+[3031] 2.202525e-01 8.836929e-01 9.839484e-01 9.929134e-01 6.482549e-01
+[3036] 9.841758e-01 6.482549e-01 9.486181e-01 9.928793e-01 7.545838e-01
+[3041] 3.600438e-01 8.714100e-01 5.692651e-01 8.714100e-01 9.406252e-01
+[3046] 9.841758e-01 8.714100e-01 7.564130e-01 8.763053e-01 9.250089e-01
+[3051] 1.890536e-01 9.444150e-01 9.944083e-01 9.449205e-01 8.724896e-01
+[3056] 9.924933e-01 9.459630e-01 9.360175e-01 9.967048e-01 9.859607e-01
+[3061] 9.735844e-01 9.832464e-01 8.720513e-01 9.924933e-01 6.495616e-01
+[3066] 9.924933e-01 8.622175e-01 8.647673e-01 8.647673e-01 7.322898e-01
+[3071] 9.832464e-01 9.832464e-01 9.832464e-01 9.638538e-01 9.967364e-01
+[3076] 8.006861e-01 7.464365e-01 6.836366e-01 9.759691e-01 9.759691e-01
+[3081] 8.834284e-01 7.303899e-01 9.866782e-01 9.643557e-01 9.643557e-01
+[3086] 9.643557e-01 5.331772e-01 8.693295e-01 9.842510e-01 2.530951e-01
+[3091] 9.396802e-01 9.396802e-01 8.719508e-01 9.211699e-01 8.962978e-01
+[3096] 8.714100e-01 6.626514e-01 9.841758e-01 9.841758e-01 9.630020e-01
+[3101] 9.652077e-01 9.926006e-01 5.487840e-01 9.934434e-01 9.544110e-01
+[3106] 9.937152e-01 9.858176e-01 8.833648e-01 9.881204e-01 9.972164e-01
+[3111] 7.771128e-01 9.859522e-01 8.823648e-01 1.314492e-02 9.783823e-01
+[3116] 5.843866e-01 9.461782e-01 8.848510e-01 9.444284e-01 9.882895e-01
+[3121] 8.999862e-01 9.461782e-01 9.446816e-01 7.610960e-01 9.851962e-01
+[3126] 9.667664e-01 9.667664e-01 9.255118e-01 9.667664e-01 9.061879e-01
+[3131] 9.465400e-01 4.712355e-02 9.860190e-01 9.860190e-01 9.858851e-01
+[3136] 8.838620e-01 9.858851e-01 9.858851e-01 9.513332e-01 9.466685e-01
+[3141] 9.550380e-01 9.466685e-01 9.863828e-01 9.937753e-01 9.972563e-01
+[3146] 9.972563e-01 9.860190e-01 9.977061e-01 9.461782e-01 9.461782e-01
+[3151] 8.775263e-01 8.798322e-01 9.524798e-01 9.524798e-01 5.937708e-01
+[3156] 3.643033e-01 9.932950e-01 9.853366e-01 9.934375e-01 9.934375e-01
+[3161] 9.934375e-01 8.798322e-01 9.972827e-01 9.861517e-01 8.931830e-01
+[3166] 9.533475e-01 9.971758e-01 9.939576e-01 9.461782e-01 9.472692e-01
+[3171] 9.983970e-01 9.441741e-01 9.936849e-01 9.439187e-01 9.439187e-01
+[3176] 8.803425e-01 9.539884e-01 9.972164e-01 8.833648e-01 9.685809e-01
+[3181] 7.667410e-01 9.019165e-01 9.977061e-01 9.937453e-01 9.937453e-01
+[3186] 7.475192e-01 9.675429e-01 5.832118e-01 1.399957e-01 9.972029e-01
+[3191] 7.728975e-01 9.935624e-01 9.028476e-01 9.851870e-01 9.972563e-01
+[3196] 9.461782e-01 9.860190e-01 9.461782e-01 9.533475e-01 9.860190e-01
+[3201] 9.860190e-01 9.976388e-01 9.544110e-01 4.867066e-01 7.771128e-01
+[3206] 9.308271e-01 8.519870e-01 9.857499e-01 8.843574e-01 8.844495e-01
+[3211] 9.933102e-01 8.838620e-01 9.436622e-01 9.853366e-01 9.935314e-01
+[3216] 9.971621e-01 9.971621e-01 9.540889e-01 8.813574e-01 9.976274e-01
+[3221] 7.658752e-01 8.917912e-01 6.574610e-02 8.589299e-03 3.692309e-03
+[3226] 6.646090e-01 9.537770e-01 9.504461e-01 6.420041e-01 9.972563e-01
+[3231] 9.972563e-01 8.403844e-01 6.678344e-01 9.859522e-01 9.859522e-01
+[3236] 2.042399e-02 8.833648e-01 8.833648e-01 9.861866e-01 9.061879e-01
+[3241] 8.897747e-01 9.451848e-01 9.976950e-01 6.752991e-01 4.806694e-01
+[3246] 9.524811e-01 9.441741e-01 4.623748e-01 9.778154e-01 9.935314e-01
+[3251] 9.492785e-01 9.947425e-01 8.929730e-01 9.456836e-01 9.456836e-01
+[3256] 9.456836e-01 9.461782e-01 8.911893e-01 9.451848e-01 9.451848e-01
+[3261] 7.593333e-01 9.451848e-01 7.593333e-01 9.774986e-01 9.774986e-01
+[3266] 9.860190e-01 9.860190e-01 9.972164e-01 9.858176e-01 3.487129e-01
+[3271] 9.417571e-01 9.940978e-01 8.843001e-01 9.498539e-01 8.606191e-01
+[3276] 7.348944e-01 9.613863e-01 9.927043e-01 9.831094e-01 9.835430e-01
+[3281] 9.459042e-01 8.668772e-01 9.923020e-01 9.828236e-01 7.320588e-01
+[3286] 9.824107e-01 9.329865e-01 9.824107e-01 9.824107e-01 5.546942e-01
+[3291] 9.967009e-01 8.719198e-01 8.845629e-01 9.829051e-01 9.617338e-01
+[3296] 8.236586e-01 9.162781e-01 9.832270e-01 7.322354e-01 1.906649e-01
+[3301] 6.582409e-05 9.731640e-01 9.841220e-01 9.376642e-01 8.169061e-01
+[3306] 9.826596e-01 9.922650e-01 9.613763e-01 9.727088e-01 1.857173e-04
+[3311] 8.634937e-01 8.708360e-01 6.346412e-01 8.646295e-01 9.362361e-01
+[3316] 9.823160e-01 9.967168e-01 9.346224e-01 9.633034e-01 7.367740e-01
+[3321] 6.393214e-01 9.370966e-01 6.514922e-01 8.663183e-01 9.373810e-01
+[3326] 9.827418e-01 9.827418e-01 9.398727e-01 8.611980e-01 9.353647e-01
+[3331] 9.088903e-01 9.716213e-01 8.559142e-01 9.314591e-01 8.532258e-01
+[3336] 9.819881e-01 9.314591e-01 9.819881e-01 9.819881e-01 8.559142e-01
+[3341] 8.559142e-01 7.709378e-01 7.377106e-01 7.452967e-01 7.452967e-01
+[3346] 9.938314e-01 9.370966e-01 9.839702e-01 9.924674e-01 9.926274e-01
+[3351] 9.926274e-01 9.967639e-01 9.835430e-01 9.608341e-01 8.663183e-01
+[3356] 3.509123e-01 9.220893e-01 8.161818e-01 7.795188e-01 8.735309e-01
+[3361] 9.834645e-01 8.713789e-01 9.929115e-01 8.713789e-01 7.434567e-01
+[3366] 9.835844e-01 7.311094e-01 2.102544e-01 9.344822e-01 9.923020e-01
+[3371] 9.966205e-01 1.681965e-01 1.681965e-01 9.436339e-01 9.826055e-01
+[3376] 8.719198e-01 8.735309e-01 9.834645e-01 9.368110e-01 9.368110e-01
+[3381] 9.967483e-01 8.663183e-01 8.637931e-01 8.637931e-01 7.348944e-01
+[3386] 5.424987e-01 9.368110e-01 9.368110e-01 4.742736e-01 6.379979e-01
+[3391] 4.298391e-01 7.229789e-01 9.357943e-01 8.774691e-01 7.397507e-01
+[3396] 2.333554e-03 9.923020e-01 9.344822e-01 9.856054e-01 9.729245e-01
+[3401] 9.858773e-01 9.831471e-01 9.831471e-01 9.421802e-01 9.966850e-01
+[3406] 9.966850e-01 9.835430e-01 9.835430e-01 9.835430e-01 9.927740e-01
+[3411] 9.832692e-01 9.927740e-01 9.927740e-01 3.113101e-02 8.646295e-01
+[3416] 1.256600e-01 7.094164e-02 4.689774e-01 1.435402e-03 9.376642e-01
+[3421] 8.674342e-01 9.111430e-01 8.568217e-01 6.290177e-01 8.651944e-01
+[3426] 8.651944e-01 8.640626e-01 9.143426e-01 9.356564e-01 9.831471e-01
+[3431] 9.356564e-01 8.640626e-01 7.344475e-01 9.861129e-01 6.612426e-01
+[3436] 9.320739e-01 8.571027e-01 9.944504e-01 9.430827e-01 9.851790e-01
+[3441] 9.851790e-01 9.851790e-01 9.853893e-01 7.709878e-01 9.849657e-01
+[3446] 8.771259e-01 9.849657e-01 9.969896e-01 9.969896e-01 8.813284e-01
+[3451] 8.813284e-01 8.766038e-01 9.843332e-01 8.807272e-01 8.807272e-01
+[3456] 4.608805e-01 8.802184e-01 9.932701e-01 9.849657e-01 9.422991e-01
+[3461] 8.003643e-01 9.684249e-01 9.850371e-01 8.776460e-01 9.664161e-01
+[3466] 9.850371e-01 9.874650e-01 9.850371e-01 9.850371e-01 9.438563e-01
+[3471] 9.438563e-01 8.779188e-01 8.776460e-01 8.753040e-01 8.936144e-01
+[3476] 9.674974e-01 9.674974e-01 9.932701e-01 9.504169e-01 9.853566e-01
+[3481] 9.760337e-01 9.933664e-01 8.786806e-01 9.937736e-01 9.935238e-01
+[3486] 9.674974e-01 9.771510e-01 8.812342e-01 7.604188e-01 8.812342e-01
+[3491] 7.604188e-01 9.855279e-01 9.858370e-01 7.541987e-01 8.776460e-01
+[3496] 4.707289e-01 4.596794e-01 9.435996e-01 8.862927e-01 9.667286e-01
+[3501] 9.934926e-01 9.452425e-01 7.907833e-01 7.623393e-01 6.567578e-01
+[3506] 8.802184e-01 8.268191e-01 9.978910e-01 7.750868e-01 8.768786e-01
+[3511] 8.828370e-01 7.559869e-01 8.786806e-01 9.435996e-01 9.847743e-01
+[3516] 9.938331e-01 9.435996e-01 9.975548e-01 9.851082e-01 9.517649e-01
+[3521] 7.709878e-01 9.853893e-01 9.487536e-01 9.487536e-01 9.853893e-01
+[3526] 6.099228e-01 9.853893e-01 7.586527e-01 9.438563e-01 7.283560e-01
+[3531] 9.849657e-01 2.053771e-01 7.172426e-01 9.971174e-01 8.898836e-01
+[3536] 9.441127e-01 6.709829e-01 9.465962e-01 8.917617e-01 9.454920e-01
+[3541] 9.508706e-01 9.428226e-01 8.848227e-01 4.719336e-01 9.931725e-01
+[3546] 9.841834e-01 9.415054e-01 9.428226e-01 7.550939e-01 6.621867e-01
+[3551] 4.719336e-01 9.441120e-01 9.854588e-01 9.971451e-01 8.807272e-01
+[3556] 9.297126e-01 9.851790e-01 9.851790e-01 9.851790e-01 8.416870e-01
+[3561] 8.853145e-01 9.665727e-01 9.665727e-01 2.765628e-01 7.684166e-01
+[3566] 6.203493e-01 9.412385e-01 9.664161e-01 8.776460e-01 8.776460e-01
+[3571] 8.776460e-01 9.517662e-01 8.867790e-01 5.890089e-01 8.940758e-01
+[3576] 8.776460e-01 7.152773e-01 9.667286e-01 9.854916e-01 9.946646e-01
+[3581] 3.983736e-01 2.207263e-01 7.798009e-01 9.417711e-01 9.853893e-01
+[3586] 9.970185e-01 9.932052e-01 9.937736e-01 9.766050e-01 9.934613e-01
+[3591] 9.848467e-01 9.159282e-01 9.398103e-02 9.438563e-01 9.933024e-01
+[3596] 8.862927e-01 5.640193e-02 5.653740e-02 1.852392e-01 3.768996e-02
+[3601] 2.385031e-01 6.592244e-01 8.148772e-02 4.493675e-01 9.681530e-02
+[3606] 2.090361e-01 9.447268e-02 4.878754e-01 9.182487e-01 6.053266e-02
+[3611] 2.096789e-01 4.072782e-03 1.945543e-01 3.608927e-01 1.926477e-01
+[3616] 1.926477e-01 2.229511e-01 1.934009e-01 1.979666e-01 2.279186e-01
+[3621] 1.668480e-01 1.743727e-01 5.201229e-02 2.347967e-01 1.716059e-01
+[3626] 9.932439e-05 9.216481e-02 8.058658e-01 2.255244e-02 5.263911e-05
+[3631] 2.001900e-01 2.009652e-01 1.013166e-02 4.276057e-03 8.103880e-02
+[3636] 3.635090e-02 1.420391e-02 8.086825e-02 5.406998e-02 5.406998e-02
+[3641] 2.386747e-02 1.948259e-01 1.832352e-02 3.563155e-01 2.298273e-02
+[3646] 1.940686e-01 1.561942e-02 1.615402e-01 9.050850e-02 4.482902e-02
+[3651] 1.516778e-03 2.190244e-01 2.190244e-01 1.248481e-01 2.194167e-01
+[3656] 2.219111e-01 2.449565e-01 1.917143e-01 9.323220e-03 1.144445e-02
+[3661] 5.830534e-02 1.854453e-01 1.914498e-02 5.177519e-02 3.440769e-03
+[3666] 4.811927e-02 2.418342e-02 1.117272e-02 1.048987e-02 1.988500e-02
+[3671] 6.694759e-03 2.406959e-02 6.350206e-03 6.350206e-03 2.726272e-03
+[3676] 4.303733e-02 5.083390e-02 4.528176e-02 2.116634e-02 5.249194e-02
+[3681] 6.963169e-03 1.941927e-02 2.306831e-02 2.306831e-02 5.097221e-04
+[3686] 2.339747e-02 6.075629e-03 2.461410e-02 5.327870e-02 8.359961e-03
+[3691] 5.225199e-02 1.237497e-02 8.280176e-03 2.328724e-02 1.914498e-02
+[3696] 5.083390e-02 4.404405e-02 1.907124e-02 4.089938e-02 4.424807e-02
+[3701] 6.963169e-03 6.215151e-06 1.572952e-02 1.360180e-01 2.057358e-02
+[3706] 2.116634e-02 4.224782e-02 1.611206e-01 1.611206e-01 1.261358e-02
+[3711] 6.505132e-02 1.304212e-02 4.486555e-02 5.326345e-02 4.969341e-02
+[3716] 5.370740e-02 2.028333e-02 4.343735e-02 6.189052e-02 4.570165e-02
+[3721] 8.443006e-02 1.388840e-01 3.716483e-03 4.549124e-02 1.858719e-02
+[3726] 2.271600e-02 5.451133e-02 5.451133e-02 5.346221e-02 5.346221e-02
+[3731] 1.388840e-01 1.979099e-02 2.314933e-02 2.806294e-03 8.400138e-03
+[3736] 4.507320e-02 4.507320e-02 1.979099e-02 3.541688e-03 4.528176e-02
+[3741] 4.528176e-02 4.528176e-02 4.528176e-02 1.979099e-02 2.406959e-02
+[3746] 4.507320e-02 5.370740e-02 1.279551e-02 4.549124e-02 2.136850e-02
+[3751] 4.445299e-02 4.445299e-02 5.735119e-03 4.789829e-02 2.263301e-05
+[3756] 6.662683e-03 2.400529e-03 1.649586e-02 1.279551e-02 4.834121e-02
+[3761] 1.279551e-02 5.395366e-02 2.126675e-02 9.831250e-02 8.686792e-03
+[3766] 4.570165e-02 2.007434e-02 5.179624e-03 4.283864e-02 5.083390e-02
+[3771] 5.083390e-02 4.553035e-02 4.553035e-02 4.767828e-02 4.486555e-02
+[3776] 4.595244e-02 2.747963e-02 2.306831e-02 5.229691e-03 1.273458e-02
+[3781] 1.273458e-02 4.244389e-02 1.161458e-04 4.244389e-02 2.073183e-03
+[3786] 2.429778e-02 6.726988e-03 5.598903e-03 4.343735e-02 4.616487e-02
+[3791] 2.317752e-02 5.273294e-02 5.080411e-02 1.712012e-02 6.543679e-02
+[3796] 2.248873e-02 5.103777e-02 4.919661e-02 1.387645e-02 4.919661e-02
+[3801] 7.512291e-03 2.695128e-02 2.733429e-02 2.707837e-02 2.682129e-03
+[3806] 6.573309e-02 2.679226e-02 6.371765e-04 9.062619e-03 5.103777e-02
+[3811] 5.103777e-02 7.584733e-03 2.733429e-02 5.080411e-02 2.556001e-02
+[3816] 4.775290e-02 2.607778e-02 2.607778e-02 2.607778e-02 2.607778e-02
+[3821] 2.607778e-02 5.661108e-02 2.607778e-02 5.178907e-02 1.367936e-02
+[3826] 2.595526e-02 4.852254e-02 2.270229e-02 1.455385e-02 2.759257e-02
+[3831] 6.247090e-02 1.695816e-02 6.368491e-02 2.707837e-02 1.170928e-02
+[3836] 2.733429e-02 2.733429e-02 1.441581e-02 1.441581e-02 6.543679e-02
+[3841] 3.253423e-02 2.733429e-02 1.720166e-02 1.441581e-02 4.919661e-02
+[3846] 6.046661e-02 5.103777e-02 1.491789e-02 5.057146e-02 5.057146e-02
+[3851] 7.476895e-04 5.274707e-02 2.185977e-02 5.883942e-02 4.897094e-02
+[3856] 5.804130e-02 5.804130e-02 1.721069e-03 6.282545e-02 8.124202e-04
+[3861] 2.682478e-02 2.682478e-02 2.720604e-02 2.720604e-02 5.080411e-02
+[3866] 6.141703e-02 4.874625e-02 8.574520e-03 1.349239e-04 4.277329e-03
+[3871] 5.954618e-03 4.897094e-02 4.897094e-02 4.897094e-02 1.166890e-03
+[3876] 5.857224e-02 5.250601e-02 2.644871e-02 2.644871e-02 1.851950e-03
+[3881] 4.942326e-02 4.829981e-02 2.196185e-01 4.829981e-02 1.904018e-01
+[3886] 1.904018e-01 2.595526e-02 2.595526e-02 2.595526e-02 7.194709e-03
+[3891] 5.103777e-02 5.103777e-02 5.103777e-02 1.729396e-03 1.387645e-02
+[3896] 1.182171e-02 5.057146e-02 5.057146e-02 4.965091e-02 2.867464e-02
+[3901] 2.217207e-02 5.033982e-02 5.033982e-02 5.033982e-02 2.695128e-02
+[3906] 2.695128e-02 2.695128e-02 7.476328e-03 4.530951e-02 2.695128e-02
+[3911] 2.370890e-02 5.057146e-02 1.404456e-02 1.527735e-02 5.396810e-02
+[3916] 1.187919e-01 2.238269e-02 4.445266e-03 1.788822e-03 5.080411e-02
+[3921] 2.720604e-02 2.240240e-02 4.874625e-02 4.874625e-02 6.106991e-02
+[3926] 2.733429e-02 2.238269e-02 2.733429e-02 6.543679e-02 7.476328e-03
+[3931] 4.298885e-02 1.440785e-02 4.298885e-02 2.271751e-02 7.508115e-03
+[3936] 4.279037e-02 4.279037e-02 4.279037e-02 5.219369e-02 4.399448e-02
+[3941] 9.577029e-04 9.795060e-04 3.769536e-03 4.338844e-02 1.842639e-03
+[3946] 6.373323e-03 4.632617e-02 4.632617e-02 9.628713e-02 1.872131e-02
+[3951] 6.003134e-02 2.282510e-02 2.282510e-02 4.939694e-02 4.259277e-02
+[3956] 1.867466e-02 1.832352e-02 3.403773e-03 4.181106e-02 4.962447e-02
+[3961] 4.220019e-02 1.184048e-02 4.220019e-02 5.512262e-03 5.344816e-02
+[3966] 4.239604e-02 1.043694e-02 4.239604e-02 8.560416e-03 2.746044e-03
+[3971] 4.419828e-02 4.419828e-02 1.980992e-03 1.201140e-02 9.461734e-02
+[3976] 8.158976e-04 6.016083e-02 4.279037e-02 2.237043e-02 5.077709e-02
+[3981] 2.484061e-02 2.836625e-02 2.084385e-02 6.192219e-03 7.225306e-03
+[3986] 2.187444e-02 2.187444e-02 2.326047e-02 2.326047e-02 1.400111e-01
+[3991] 4.279037e-02 1.128793e-02 4.028861e-02 4.028861e-02 7.622883e-03
+[3996] 2.293319e-02 6.342778e-03 5.101064e-02 2.293319e-02 5.101064e-02
+[4001] 1.608162e-03 1.212670e-02 1.729849e-01 1.941399e-02 4.028861e-02
+[4006] 4.028861e-02 2.348118e-02 4.298885e-02 1.912288e-02 5.223825e-02
+[4011] 2.208230e-02 6.252011e-03 8.642877e-03 4.279037e-02 1.201140e-02
+[4016] 4.279037e-02 4.279037e-02 1.206891e-02 4.968123e-02 4.104308e-02
+[4021] 1.373715e-02 4.104308e-02 2.156624e-02 8.337516e-02 4.645223e-03
+[4026] 3.571785e-03 1.043694e-02 2.261042e-02 2.261042e-02 1.858626e-02
+[4031] 1.849827e-02 5.008251e-02 9.156668e-02 2.804909e-04 5.195502e-02
+[4036] 8.726126e-03 2.403382e-02 1.279010e-04 9.076549e-02 2.229208e-02
+[4041] 4.444120e-02 2.229208e-02 4.161779e-02 4.161779e-02 5.026374e-03
+[4046] 2.261042e-02 2.261042e-02 1.858626e-02 8.438185e-03 4.739323e-02
+[4051] 5.618864e-02 2.126228e-02 2.126228e-02 3.991638e-02 2.126228e-02
+[4056] 2.282510e-02 5.077709e-02 3.236088e-02 1.796471e-03 4.298885e-02
+[4061] 2.326047e-02 4.622921e-03 4.872027e-02 4.611303e-02 5.148078e-02
+[4066] 8.230947e-03 2.414749e-02 4.611303e-02 1.702326e-06 1.382733e-05
+[4071] 1.454582e-02 2.414749e-02 6.918761e-04 8.230947e-03 1.903240e-02
+[4076] 4.338844e-02 8.074564e-03 1.867466e-02 4.526977e-02 5.054456e-02
+[4081] 1.172787e-02 4.181106e-02 4.181106e-02 2.229208e-02 5.381311e-03
+[4086] 4.181106e-02 2.139025e-02 2.229208e-02 1.201140e-02 5.077709e-02
+[4091] 1.297648e-02 2.025993e-02 2.025993e-02 8.908786e-02 5.468449e-02
+[4096] 6.404015e-03 6.404015e-03 5.592349e-03 6.304565e-03 2.770749e-02
+[4101] 4.611303e-02 5.248751e-03 4.611303e-02 2.315087e-02 7.653611e-03
+[4106] 6.404015e-03 6.404015e-03 6.404015e-03 5.148078e-02 7.653611e-03
+[4111] 1.218475e-02 5.468449e-02 7.653611e-03 4.338844e-02 6.822721e-03
+[4116] 4.338844e-02 1.516286e-03 1.548855e-02 1.903240e-02 1.297648e-02
+[4121] 2.025993e-02 5.592349e-03 5.248751e-03 6.162536e-03 6.162536e-03
+[4126] 2.229208e-02 7.365363e-03 8.438185e-03 4.181106e-02 1.554728e-03
+[4131] 4.181106e-02 1.950624e-02 1.929921e-05 1.950624e-02 1.400166e-02
+[4136] 1.172787e-02 1.172787e-02 1.832352e-02 1.172787e-02 1.458840e-03
+[4141] 6.162536e-03 6.162536e-03 1.832352e-02 4.181106e-02 4.181106e-02
+[4146] 5.273418e-02 1.461528e-02 2.655900e-02 5.060231e-02 1.950624e-02
+[4151] 2.309021e-03 5.381311e-03 1.950624e-02 1.811150e-04 5.271908e-02
+[4156] 5.271908e-02 1.832352e-02 9.924484e-01 2.271751e-02 2.271751e-02
+[4161] 1.048699e-02 1.445531e-05 1.243079e-02 4.423633e-02 5.247814e-02
+[4166] 4.423633e-02 2.643104e-02 4.181106e-02 4.181106e-02 6.623006e-03
+[4171] 4.279037e-02 1.603215e-02 1.316358e-02 4.188516e-04 4.399448e-02
+[4176] 4.399448e-02 5.673593e-03 4.399448e-02 7.764567e-03 4.872027e-02
+[4181] 4.104308e-02 4.104308e-02 4.104308e-02 7.770586e-03 1.195416e-02
+[4186] 2.161824e-02 8.685350e-02 5.128619e-03 2.126228e-02 1.195416e-02
+[4191] 5.031303e-02 4.419828e-02 4.419828e-02 4.419828e-02 4.419828e-02
+[4196] 2.250382e-02 1.878005e-02 4.028861e-02 5.082051e-02 1.679091e-03
+[4201] 5.082051e-02 4.072466e-04 9.701914e-03 8.120630e-03 2.592550e-02
+[4206] 1.454987e-02 4.823211e-03 3.072163e-02 2.580368e-02 4.823211e-03
+[4211] 2.580368e-02 2.580368e-02 2.580368e-02 5.718980e-02 6.767413e-02
+[4216] 2.068888e-03 2.580368e-02 5.125895e-02 3.072163e-02 4.891611e-02
+[4221] 4.891611e-02 5.745106e-02 7.290531e-03 2.629433e-02 5.824156e-02
+[4226] 1.599901e-02 2.496641e-02 4.650031e-02 4.650031e-02 2.175072e-02
+[4231] 9.810548e-02 1.259129e-01 1.744527e-01 2.617082e-02 6.336709e-03
+[4236] 4.891611e-02 2.544156e-02 2.617082e-02 9.930882e-03 2.617082e-02
+[4241] 4.780360e-02 4.891611e-02 7.083549e-03 1.982263e-02 1.661948e-02
+[4246] 4.824569e-02 2.580368e-02 2.580368e-02 4.824569e-02 5.718980e-02
+[4251] 1.805672e-03 3.144973e-02 1.392658e-02 1.147420e-02 2.641840e-02
+[4256] 2.641840e-02 2.641840e-02 2.641840e-02 7.325606e-03 2.641840e-02
+[4261] 7.393723e-03 2.237662e-02 4.170697e-03 1.649984e-02 3.773961e-02
+[4266] 1.788326e-03 4.780360e-02 3.914102e-03 2.102358e-02 5.667063e-02
+[4271] 5.079073e-02 8.464612e-03 4.824569e-02 5.125895e-02 2.258914e-02
+[4276] 6.155867e-02 4.869166e-02 3.101089e-02 2.604788e-02 4.869166e-02
+[4281] 2.604788e-02 4.824569e-02 4.914154e-02 4.914154e-02 4.914154e-02
+[4286] 4.780360e-02 4.780360e-02 2.467686e-02 1.413973e-02 7.151886e-03
+[4291] 7.151886e-03 3.341020e-04 2.729381e-02 7.418062e-02 1.577608e-01
+[4296] 1.636226e-04 5.797693e-02 6.797983e-02 1.161635e-01 1.161635e-01
+[4301] 1.366348e-02 1.366348e-02 5.745106e-02 5.824156e-02 4.714768e-02
+[4306] 4.824569e-02 1.336575e-01 1.193193e-02 1.193193e-02 1.120321e-02
+[4311] 3.072163e-02 4.824569e-02 2.580368e-02 4.869849e-03 5.718980e-02
+[4316] 5.641272e-02 2.544156e-02 1.669976e-03 1.427516e-02 2.227109e-02
+[4321] 2.604788e-02 6.127994e-02 5.102433e-02 4.693094e-02 4.292933e-03
+[4326] 9.102562e-03 2.505392e-02 2.580368e-02 6.246029e-03 2.258914e-02
+[4331] 4.869166e-02 4.869166e-02 6.247236e-02 4.758400e-02 9.512033e-03
+[4336] 4.986639e-02 8.303827e-03 2.984293e-03 5.149460e-02 1.454987e-02
+[4341] 1.334684e-04 1.198907e-02 6.100240e-02 6.276111e-03 9.836254e-03
+[4346] 3.057799e-02 1.353377e-02 2.556171e-02 6.989955e-02 2.062920e-02
+[4351] 4.693094e-02 4.693094e-02 4.693094e-02 5.695833e-03 1.359847e-02
+[4356] 1.353377e-02 1.470312e-01 4.802416e-02 5.102433e-02 2.733606e-03
+[4361] 2.162902e-02 2.000619e-02 5.862505e-03 9.190197e-03 5.718980e-02
+[4366] 1.727888e-02 1.448071e-02 6.190838e-02 4.824569e-02 5.718980e-02
+[4371] 3.292925e-04 4.846819e-02 7.074789e-03 5.173126e-02 2.152694e-02
+[4376] 2.617082e-02 4.891611e-02 4.891611e-02 3.115651e-02 4.891611e-02
+[4381] 6.336709e-03 1.165518e-03 1.468917e-02 1.468917e-02 2.617082e-02
+[4386] 6.017682e-02 2.617082e-02 5.488824e-02 1.387265e-02 1.716849e-01
+[4391] 4.824569e-02 6.097753e-03 1.327798e-02 1.762620e-03 5.009597e-02
+[4396] 7.844816e-04 5.009597e-02 4.869166e-02 5.771343e-02 1.703430e-02
+[4401] 5.641272e-02 5.778571e-03 6.304112e-02 6.304112e-02 5.125895e-02
+[4406] 2.924665e-02 2.592550e-02 1.488596e-01 5.771343e-02 1.153863e-01
+[4411] 2.606081e-02 8.957701e-02 4.363869e-02 5.280238e-03 5.072340e-02
+[4416] 8.255467e-02 8.255467e-02 8.255467e-02 8.420795e-02 9.076699e-02
+[4421] 1.090366e-01 1.021882e-01 1.851967e-02 6.229331e-03 2.065933e-01
+[4426] 4.293236e-02 1.139140e-01 1.227205e-01 1.123707e-02 8.948180e-03
+[4431] 8.978458e-02 2.187339e-01 7.075393e-02 7.941278e-03 1.888644e-01
+[4436] 7.903277e-03 1.888644e-01 7.043670e-02 3.716483e-03 8.629133e-02
+[4441] 1.202538e-02 1.808513e-01 2.089809e-01 1.017455e-01 1.328445e-05
+[4446] 1.076373e-02 4.191377e-02 1.955528e-02 1.034694e-01 1.109576e-01
+[4451] 2.088788e-01 2.322410e-01 4.629826e-02 2.088788e-01 5.103777e-02
+[4456] 2.357072e-01 1.831333e-02 2.357072e-01 4.885223e-02 1.012482e-01
+[4461] 9.993593e-02 1.034694e-01 9.950188e-02 1.008091e-01 2.339696e-01
+[4466] 1.637764e-01 2.910892e-02 1.034694e-01 2.339696e-01 2.033411e-01
+[4471] 1.148022e-01 2.288105e-01 9.589050e-02 4.566200e-02 1.397904e-01
+[4476] 6.640030e-02 2.064921e-01 1.850111e-01 1.850111e-01 8.356968e-02
+[4481] 8.753083e-02 8.506282e-02 8.506282e-02 8.506282e-02 4.151613e-02
+[4486] 1.005508e-01 1.065979e-01 8.791776e-02 1.872082e-01 2.016889e-01
+[4491] 8.791776e-02 8.619851e-02 1.806769e-01 3.946046e-02 9.773295e-02
+[4496] 9.034595e-02 8.714543e-02 1.813937e-01 8.658011e-02 8.830624e-02
+[4501] 2.615379e-02 2.064002e-01 1.785396e-01 5.788336e-02 8.431325e-02
+[4506] 8.599844e-02 1.771258e-01 8.394072e-02 1.007583e-01 4.209717e-02
+[4511] 1.032050e-01 6.429144e-02 8.337516e-02 8.581843e-02 1.771258e-01
+[4516] 1.172787e-02 8.599844e-02 1.771258e-01 8.431325e-02 8.908786e-02
+[4521] 1.828341e-01 8.014732e-02 1.828341e-01 8.734791e-02 2.111925e-01
+[4526] 8.092872e-03 8.734791e-02 4.200519e-02 1.841069e-02 1.011972e-01
+[4531] 1.771258e-01 7.788211e-03 1.113799e-01 8.431325e-02 2.048208e-01
+[4536] 4.480261e-02 2.048208e-01 2.168858e-01 1.277070e-01 1.195416e-02
+[4541] 8.714543e-02 2.950561e-02 1.785396e-01 2.529121e-02 2.529121e-02
+[4546] 4.466756e-02 1.181639e-01 1.038929e-01 9.767851e-02 9.767851e-02
+[4551] 9.578843e-02 2.303124e-01 4.836258e-02 1.154337e-01 1.453278e-02
+[4556] 1.984947e-01 1.984947e-01 8.223526e-03 2.286027e-01 2.127101e-02
+[4561] 1.002654e-01 1.580774e-02 9.662925e-02 1.161635e-01 1.154337e-01
+[4566] 4.487434e-02 1.105879e-01 2.031504e-01 1.043439e-01 2.826779e-02
+[4571] 1.372879e-02 1.047966e-01 9.230182e-02 1.951547e-02 4.446170e-02
+[4576] 2.294564e-01 7.525372e-02 2.826779e-02 9.810548e-02 3.363916e-02
+[4581] 1.151744e-01 9.810548e-02 5.167280e-02 2.294564e-01 2.294564e-01
+[4586] 1.047966e-01 9.983004e-02 4.891611e-02 2.000376e-01 6.224913e-02
+[4591] 1.961972e-01 2.520289e-02 1.113896e-01 2.436031e-01 1.162660e-01
+[4596] 1.162660e-01 2.334820e-01 1.133183e-01 2.387139e-01 2.409403e-01
+[4601] 4.201941e-02 1.343224e-01 1.192800e-01 2.313480e-01 1.187730e-01
+[4606] 1.187730e-01 2.356748e-01 5.451133e-02 1.228815e-01 1.177646e-01
+[4611] 1.048942e-02 1.187730e-01 2.395937e-01 1.172632e-01 1.172632e-01
+[4616] 1.187730e-01 4.903254e-03 1.418005e-01 1.213267e-01 2.374211e-01
+[4621] 2.374211e-01 5.758080e-02 5.183427e-02 1.133183e-01 1.133183e-01
+[4626] 1.198838e-01 2.262295e-01 1.133183e-01 1.113896e-01 1.113896e-01
+[4631] 1.113896e-01 1.187730e-01 1.123503e-01 1.142935e-01 2.220257e-01
+[4636] 3.486745e-02 1.172632e-01 1.521856e-02 2.369610e-01 5.376856e-02
+[4641] 1.331307e-01 1.303654e-01 1.303654e-01 1.276491e-01 1.276491e-01
+[4646] 1.673782e-02 1.271117e-01 3.059967e-05 1.314656e-01 1.314656e-01
+[4651] 1.331307e-01 1.298182e-01 1.287298e-01 6.081053e-02 6.081053e-02
+[4656] 1.331307e-01 1.331307e-01 1.755242e-02 1.325737e-01 1.271117e-01
+[4661] 1.552445e-01 8.493472e-02 1.637905e-01 1.281885e-01 1.281885e-01
+[4666] 2.548873e-01 1.276491e-01 2.548873e-01 1.281885e-01 6.282545e-02
+[4671] 2.535360e-01 3.791769e-02 1.265762e-01 2.590654e-01 1.325737e-01
+[4676] 1.325737e-01 1.314656e-01 1.314656e-01 2.581384e-01 2.572136e-01
+[4681] 2.695014e-02 1.298182e-01 1.298182e-01 1.298182e-01 1.325737e-01
+[4686] 1.546115e-01 1.276491e-01 1.276491e-01 1.276491e-01 1.331307e-01
+[4691] 1.325737e-01 1.331307e-01 1.331307e-01 1.552445e-01 1.136863e-01
+[4696] 1.093748e-01 1.151560e-01 1.127155e-01 1.127155e-01 1.182390e-01
+[4701] 1.182390e-01 2.319989e-01 1.132000e-01 1.132000e-01 1.545382e-01
+[4706] 1.132000e-01 1.132000e-01 1.132000e-01 2.226581e-01 2.226581e-01
+[4711] 1.166423e-01 1.166423e-01 1.151560e-01 2.332713e-01 1.207827e-01
+[4716] 2.575446e-01 6.336395e-02 2.260234e-01 5.273418e-02 5.249318e-02
+[4721] 7.457111e-02 1.146643e-01 1.146643e-01 1.132000e-01 1.151560e-01
+[4726] 1.151560e-01 1.212971e-01 1.107958e-01 1.172345e-01 5.060231e-02
+[4731] 5.462727e-02 7.416120e-02 5.297623e-02 7.066469e-02 1.089047e-01
+[4736] 2.271655e-02 5.346347e-02 1.248525e-01 1.227546e-01 1.243252e-01
+[4741] 8.225201e-02 1.494732e-01 1.280569e-01 1.253818e-01 1.291405e-01
+[4746] 2.887406e-01 1.280569e-01 1.136455e-02 1.280569e-01 1.488596e-01
+[4751] 1.280569e-01 2.442776e-01 1.285977e-01 1.656023e-02 1.656023e-02
+[4756] 1.264460e-01 1.275180e-01 2.460671e-01 2.460671e-01 1.458226e-01
+[4761] 1.488596e-01 9.856389e-02 1.253818e-01 1.253818e-01 1.248525e-01
+[4766] 1.259129e-01 1.259129e-01 1.330987e-01 5.673497e-02 5.673497e-02
+[4771] 5.673497e-02 2.528325e-01 1.222349e-01 2.487679e-01 2.487679e-01
+[4776] 2.487679e-01 1.264460e-01 1.259129e-01 1.709985e-01 1.275180e-01
+[4781] 1.280569e-01 1.494732e-01 1.280569e-01 5.765891e-03 5.830757e-02
+[4786] 2.487679e-01 5.830757e-02 5.699427e-02 5.699427e-02 1.237998e-01
+[4791] 5.699427e-02 5.699427e-02 1.237998e-01 2.565034e-01 1.336575e-01
+[4796] 1.280569e-01 4.986639e-02 2.195743e-02 1.407249e-02 9.059056e-03
+[4801] 2.092430e-02 2.544156e-02 5.570749e-02 5.155216e-02 1.978560e-02
+[4806] 1.407249e-02 2.546219e-02 4.547919e-02 4.279037e-02 4.279037e-02
+[4811] 4.655257e-02 1.296495e-02 4.460859e-02 5.184223e-02 2.064740e-02
+[4816] 3.370789e-02 5.010918e-02 1.601756e-02 5.647545e-02 3.734428e-03
+[4821] 2.197813e-02 1.231264e-02 1.285673e-02 2.568213e-03 5.830620e-02
+[4826] 5.325029e-03 4.675527e-02 1.960426e-02 4.201947e-06 2.595526e-02
+[4831] 1.639860e-02 1.606717e-03 4.617390e-02 4.617390e-02 8.303827e-03
+[4836] 1.850364e-02 4.675527e-02 3.884615e-03 4.547919e-02 8.948360e-10
+[4841] 1.249813e-01 6.912538e-04 1.961263e-03 6.616469e-02 4.852254e-02
+[4846] 2.155177e-02 7.253568e-02 2.304178e-02 4.379157e-02 1.037957e-03
+[4851] 4.720062e-02 1.253891e-02 5.488824e-02 2.496641e-02 2.657349e-02
+[4856] 2.644871e-02 1.158180e-01 4.628641e-02 2.282989e-02 2.607778e-02
+[4861] 1.253891e-02 4.175592e-03 4.128850e-02 6.024347e-02 4.628641e-02
+[4866] 2.102358e-02 4.780360e-02 2.002929e-02 4.946558e-02 4.946558e-02
+[4871] 1.142966e-02 5.954618e-03 3.162281e-02 1.381044e-02 4.511197e-02
+[4876] 1.268521e-02 7.299060e-03 5.777752e-02 2.617510e-03 2.206150e-02
+[4881] 6.816623e-03 5.061471e-02 5.061471e-02 5.061471e-02 1.429174e-02
+[4886] 5.061471e-02 4.549124e-02 2.429778e-02 4.549124e-02 2.429778e-02
+[4891] 7.269801e-04 1.598966e-04 4.753352e-02 5.080411e-02 1.781810e-03
+[4896] 7.229327e-03 1.249371e-02 5.641272e-02 2.969373e-02 4.460859e-02
+[4901] 2.074540e-02 2.155177e-02 3.057596e-02 1.729396e-03 1.622303e-03
+[4906] 2.092430e-02 4.758400e-02 5.883942e-02 4.986639e-02 4.549124e-02
+[4911] 4.279037e-02 4.460859e-02 6.683810e-02 4.714768e-02 7.253130e-03
+[4916] 5.055813e-02 6.068520e-03 6.068520e-03 5.065467e-03 4.992888e-03
+[4921] 9.512033e-03 2.525162e-03 2.473210e-02 5.600997e-02 4.724113e-02
+[4926] 1.400556e-02 1.400556e-02 6.039426e-03 1.315189e-02 1.458840e-03
+[4931] 1.312217e-02 6.156639e-03 1.997945e-02 4.322542e-02 1.121579e-02
+[4936] 1.156094e-02 2.135579e-03 7.807954e-03 5.219369e-02 4.789829e-02
+[4941] 3.490865e-03 8.805773e-03 8.805773e-03 1.595567e-02 4.806534e-02
+[4946] 6.442388e-03 6.442388e-03 8.638564e-03 1.979099e-02 9.121326e-03
+[4951] 9.121326e-03 4.363869e-02 1.034038e-02 5.626615e-02 2.632450e-02
+[4956] 2.326534e-02 4.965091e-02 1.330524e-02 4.919661e-02 7.299060e-03
+[4961] 4.919661e-02 4.382929e-02 1.231264e-02 6.097753e-03 1.093795e-06
+[4966] 5.009597e-02 7.369461e-03 2.458900e-02 3.773945e-06 2.510474e-02
+[4971] 1.003728e-03 5.818425e-03 9.483694e-02 6.624345e-04 2.174470e-02
+[4976] 4.939694e-02 5.473597e-04 4.939694e-02 1.941399e-02 5.054456e-02
+[4981] 1.167196e-02 3.788783e-03 9.836254e-03 2.592550e-02 9.661135e-02
+[4986] 4.465882e-02 1.026920e-05 4.720062e-02 4.633843e-02 5.015205e-02
+[4991] 7.192238e-03 4.586141e-02 1.972378e-02 1.422379e-02 1.534687e-01
+[4996] 1.534687e-01 4.404405e-02 1.850615e-01 4.671516e-02 2.541067e-02
+[5001] 6.849435e-03 1.639860e-02 4.873338e-02 2.116634e-02 6.024347e-02
+[5006] 4.465882e-02 5.378823e-06 9.286948e-03 1.028263e-03 1.616391e-03
+[5011] 4.423633e-02 1.536498e-04 1.563670e-02 4.946558e-02 4.789829e-02
+[5016] 1.470623e-02 5.652344e-02 2.096692e-02 4.897094e-02 6.923623e-03
+[5021] 4.745923e-02 4.918363e-02 4.628641e-02 5.799929e-05 2.304661e-02
+[5026] 1.329343e-02 1.689269e-02 5.178907e-02 4.919661e-02 2.426987e-02
+[5031] 4.987954e-02 4.720062e-02 1.422379e-02 1.951155e-02 4.824569e-02
+[5036] 1.689521e-01 4.172075e-04 5.124520e-02 4.465882e-02 3.281875e-02
+[5041] 4.445299e-02 6.973621e-03 9.102562e-03 1.195416e-02 6.824602e-03
+[5046] 4.123380e-02 3.784340e-03 1.978560e-02 1.978560e-02 8.714543e-02
+[5051] 6.074334e-03 1.328979e-02 1.948903e-02 4.506126e-02 4.108946e-02
+[5056] 6.425669e-02 4.671516e-02 4.834121e-02 2.175072e-02 5.155216e-02
+[5061] 5.148733e-03 4.718814e-02 6.557435e-03 4.259277e-02 1.273109e-02
+[5066] 2.175072e-02 1.948903e-02 4.399448e-02 2.054986e-02 4.399448e-02
+[5071] 1.215886e-01 1.284179e-02 2.929621e-04 1.278064e-02 8.029708e-03
+[5076] 2.426987e-02 5.303046e-02 4.470600e-02 2.185977e-02 1.046031e-05
+[5081] 4.013091e-03 6.816623e-03 1.388878e-02 2.481881e-02 2.583331e-02
+[5086] 2.271751e-02 2.475217e-02 5.131627e-02 1.995640e-02 4.676764e-02
+[5091] 4.676764e-02 4.399448e-02 4.259277e-02 2.674550e-06 4.740601e-02
+[5096] 8.676655e-03 1.012002e-02 2.155177e-02 1.356154e-02 1.032763e-02
+[5101] 4.309357e-02 4.399448e-02 5.438876e-02 4.637824e-02 4.259277e-02
+[5106] 2.652680e-02 5.806415e-03 1.253891e-02 5.013858e-02 4.824569e-02
+[5111] 1.221951e-02 5.033982e-02 4.220019e-02 5.589437e-03 1.381866e-04
+[5116] 4.460859e-02 3.641281e-03 4.445299e-02 5.564557e-02 8.485976e-05
+[5121] 4.714768e-02 2.166928e-05 4.736536e-02 4.736536e-02 2.077879e-02
+[5126] 5.125895e-02 5.718980e-02 5.291592e-02 6.266881e-02 4.460859e-02
+[5131] 5.824156e-02 2.616201e-02 2.258914e-02 6.156639e-03 1.520512e-06
+[5136] 6.041093e-03 2.043804e-04 4.986639e-02 1.311881e-02 1.967468e-02
+[5141] 4.802416e-02 1.325093e-01 5.108806e-05 4.259277e-02 9.286948e-03
+[5146] 1.212174e-03 1.930510e-02 2.653411e-02 1.247810e-03 2.136762e-02
+[5151] 1.178404e-02 7.402943e-04 1.406856e-02 2.217207e-02 5.079073e-02
+[5156] 4.702399e-02 5.077709e-02 2.237043e-02 4.873338e-02 1.356103e-02
+[5161] 1.374099e-02 5.924432e-03 4.200519e-02 7.937762e-05 5.077709e-02
+[5166] 2.426987e-02 4.852254e-02 4.897094e-02 2.271751e-02 2.239770e-02
+[5171] 2.164808e-02 3.294420e-02 4.763741e-02 4.507320e-02 4.824569e-02
+[5176] 8.733081e-01 2.009206e-02 1.112908e-01 5.149460e-02 2.348118e-02
+[5181] 1.194342e-02 1.108135e-01 9.309022e-02 6.253196e-02 2.620135e-01
+[5186] 1.021316e-01 1.062502e-01 1.115426e-01 1.076354e-01 5.120100e-02
+[5191] 1.162845e-01 2.015895e-01 9.950188e-02 1.872082e-01 9.289687e-02
+[5196] 1.961972e-01 9.735666e-02 1.065979e-01 7.259145e-03 9.725320e-02
+[5201] 1.141926e-01 1.141926e-01 1.933130e-02 1.910965e-01 8.723918e-02
+[5206] 2.339696e-01 9.863879e-02 1.601296e-02 1.150887e-02 1.671453e-03
+[5211] 9.822654e-03 1.006574e-01 1.120226e-01 1.632056e-02 9.988554e-02
+[5216] 2.895682e-02 2.732749e-01 9.483694e-02 4.333145e-02 2.245727e-01
+[5221] 1.946767e-01 8.987571e-02 1.122509e-01 1.830101e-01 1.214420e-01
+[5226] 6.260105e-02 1.043174e-01 1.107868e-04 1.067302e-02 1.916625e-01
+[5231] 9.390982e-02 1.139140e-01 3.914755e-02 5.576567e-02 2.235273e-01
+[5236] 9.309022e-02 2.096789e-01 9.156820e-02 1.576432e-02 3.851132e-02
+[5241] 2.040345e-01 6.085279e-02 2.088788e-01 4.400577e-02 1.108135e-01
+[5246] 1.108135e-01 1.108135e-01 4.264920e-02 9.896441e-02 2.800337e-02
+[5251] 4.375351e-02 9.833068e-02 2.000376e-01 1.821128e-01 2.235055e-02
+[5256] 3.157689e-02 9.950188e-02 2.277512e-01 2.010016e-01 9.662925e-02
+[5261] 8.419869e-01 1.979135e-01 1.172239e-01 1.799623e-01 6.746928e-01
+[5266] 1.984947e-01 2.859364e-01 2.025590e-01 1.939198e-01 9.453946e-02
+[5271] 1.835575e-01 4.417491e-03 1.043698e-01 6.906963e-01 1.276491e-01
+[5276] 1.276491e-01 1.276491e-01 1.276491e-01 1.234036e-01 1.406278e-01
+[5281] 1.287298e-01 1.249813e-01 1.249813e-01 1.276491e-01 1.249813e-01
+[5286] 1.275180e-01 1.176423e-01 1.176423e-01 1.520647e-01 1.103203e-01
+[5291] 1.281885e-01 1.248525e-01 1.281885e-01 1.239276e-01 1.177646e-01
+[5296] 1.177646e-01 1.177646e-01 1.310170e-01 1.314339e-01 1.176423e-01
+[5301] 1.237998e-01 1.183172e-02 2.850251e-01 2.498933e-01 1.223614e-01
+[5306] 5.758010e-02 1.287298e-01 1.171414e-01 1.126953e-02 1.271117e-01
+[5311] 3.795054e-02 1.281885e-01 1.281885e-01 1.123503e-01 1.337940e-01
+[5316] 1.319869e-01 1.152761e-01 1.223614e-01 1.152761e-01 1.303654e-01
+[5321] 1.303654e-01 2.580311e-01 1.162660e-01 1.217171e-01 2.427133e-01
+[5326] 1.951300e-02 1.534687e-01 5.577080e-02 1.177646e-01 1.177646e-01
+[5331] 3.619277e-02 2.407250e-01 1.172632e-01 1.264460e-01 2.193287e-01
+[5336] 1.196647e-01 1.196647e-01 1.177646e-01 2.339373e-01 1.237998e-01
+[5341] 1.234036e-01 5.153955e-02 1.298182e-01 1.052075e-01 1.342184e-01
+[5346] 1.271117e-01 1.244535e-01 1.265762e-01 1.176423e-01 1.201750e-01
+[5351] 1.243252e-01 1.088590e-02 1.259129e-01 1.227546e-01 1.227546e-01
+[5356] 1.237998e-01 1.285977e-01 1.285977e-01 1.161450e-01 1.136863e-01
+[5361] 1.136863e-01 1.127155e-01 5.474670e-02 4.390164e-04 3.277174e-01
+[5366] 3.277174e-01 1.502393e-01 2.298301e-01 1.292730e-01 1.406278e-01
+[5371] 1.255110e-01 2.548873e-01 2.350052e-01 2.387139e-01 2.387139e-01
+[5376] 2.378364e-01 5.376856e-02 2.378364e-01 2.632393e-01 5.153955e-02
+[5381] 2.464926e-01 2.924461e-01 2.528325e-01 2.264247e-01 8.710206e-01
+[5386] 5.945114e-01 8.876392e-02 9.646465e-01 8.645661e-01 8.574138e-01
+[5391] 8.708360e-01 9.376642e-01 9.857013e-01 8.793201e-01 1.332591e-01
+[5396] 3.099770e-01 8.783864e-01 8.803425e-01 8.760799e-01 3.531814e-01
+[5401] 8.967463e-01 8.302484e-01 8.803425e-01 3.972154e-01 7.533013e-01
+[5406] 1.109058e-02 2.165553e-03 7.753841e-01 8.574138e-01 9.407671e-01
+[5411] 1.968334e-01 9.649748e-01 2.503630e-01 6.144261e-01 9.453815e-01
+[5416] 8.751550e-01 8.768284e-01 4.178955e-02 8.980816e-01 8.980816e-01
+[5421] 9.019962e-01 6.906435e-01 1.959283e-01 9.053626e-01 6.281872e-03
+[5426] 6.591991e-01 6.801398e-04 8.464636e-02 7.434567e-01 5.737127e-01
+[5431] 6.427230e-01 7.562042e-01 5.301195e-03 8.786806e-01 9.442328e-01
+[5436] 8.763556e-01 4.966439e-01 7.405075e-01 8.740641e-01 8.750262e-01
+[5441] 8.679892e-01 4.518570e-09 4.196241e-01 8.696424e-01 8.247323e-01
+[5446] 9.014382e-01 7.376057e-01 1.512331e-03 8.766038e-01 4.419486e-01
+[5451] 8.916299e-01 8.697444e-01 8.623499e-01 8.623499e-01 8.730266e-01
+[5456] 5.335169e-01 8.997320e-01 7.625526e-01 8.756823e-01 8.865231e-01
+[5461] 8.865231e-01 4.503113e-01 8.808509e-01 9.616493e-01 6.717477e-01
+[5466] 8.828370e-01 6.374683e-01 6.721106e-01 9.935314e-01 7.489506e-01
+[5471] 8.674342e-01 8.785617e-01 8.771259e-01 9.857013e-01 9.931649e-01
+[5476] 9.411630e-01 9.944835e-01 9.637907e-01 9.974181e-01 9.422991e-01
+[5481] 7.583511e-01 9.418356e-01 8.646295e-01 9.620881e-01 9.620881e-01
+[5486] 9.113737e-01 3.746499e-01 8.739649e-01 6.654237e-01 7.686262e-01
+[5491] 8.762077e-01 7.728975e-01 7.728975e-01 8.818620e-01 8.883441e-01
+[5496] 8.760799e-01 8.798322e-01 8.744966e-01 7.694849e-01 8.864113e-01
+[5501] 8.864113e-01 8.864113e-01 8.798322e-01 8.798322e-01 9.932131e-01
+[5506] 9.081011e-01 8.818620e-01 8.838336e-01 8.883441e-01 8.854341e-01
+[5511] 9.639810e-01 6.581120e-01 7.398042e-01 8.793201e-01 9.972361e-01
+[5516] 9.435269e-01 8.917617e-01 9.426252e-01 8.854341e-01 9.365242e-01
+[5521] 6.318631e-01 8.755540e-01 8.938321e-01 9.934375e-01 8.953112e-01
+[5526] 9.646866e-01 9.853735e-01 9.488109e-01 7.597520e-01 9.441741e-01
+[5531] 9.935314e-01 9.935314e-01 9.930576e-01 9.857179e-01 8.719508e-01
+[5536] 9.664543e-01 8.863296e-01 7.525694e-01 7.552604e-01 7.552604e-01
+[5541] 8.712779e-01 8.931538e-01 8.828370e-01 8.767012e-01 9.630506e-01
+[5546] 8.666125e-01 8.666125e-01 8.666125e-01 8.690933e-01 8.941873e-01
+[5551] 7.703414e-01 8.871266e-01 9.648510e-01 9.490452e-01 8.859236e-01
+[5556] 8.650644e-01 8.771259e-01 9.397433e-01 8.924834e-01 9.411630e-01
+[5561] 8.719508e-01 9.855447e-01 8.984412e-01 8.984412e-01 8.771259e-01
+[5566] 8.788061e-01 8.714100e-01 9.476672e-01 9.454280e-01 9.445486e-01
+[5571] 8.803425e-01 9.422991e-01 8.771259e-01 8.696424e-01 7.605828e-01
+[5576] 9.687193e-01 9.443137e-01 9.931866e-01 8.838620e-01 8.755540e-01
+[5581] 8.902480e-01 8.973471e-01 9.662589e-01 8.771259e-01 9.935932e-01
+[5586] 8.863829e-01 9.931147e-01 8.863829e-01 8.883160e-01 8.692272e-01
+[5591] 8.739649e-01 8.888228e-01 9.939778e-01 8.708672e-01 8.720513e-01
+[5596] 8.697759e-01 9.562932e-01 8.888228e-01 8.712779e-01 8.786806e-01
+[5601] 7.579316e-01 8.798322e-01 6.718248e-01 9.670027e-01 9.935624e-01
+[5606] 7.018840e-01 8.808509e-01 8.808509e-01 9.853566e-01 8.611980e-01
+[5611] 8.777724e-01 9.613763e-01 8.675377e-01 4.625987e-01 9.646651e-01
+[5616] 8.851755e-01 8.374080e-01 9.229076e-01 8.728959e-01 8.681241e-01
+[5621] 8.728959e-01 9.847878e-01 8.728959e-01 9.217844e-01 9.649748e-01
+[5626] 9.649748e-01 9.635154e-01 9.635154e-01 8.681241e-01 9.635154e-01
+[5631] 9.385746e-01 8.768284e-01 8.791951e-01 8.791951e-01 9.389842e-01
+[5636] 9.837177e-01 8.768284e-01 8.782902e-01 8.708672e-01 9.847878e-01
+[5641] 8.703225e-01 8.703225e-01 8.703225e-01 7.536873e-01 9.635154e-01
+[5646] 9.664543e-01 8.735616e-01 8.735616e-01 8.242030e-01 9.643557e-01
+[5651] 9.758826e-01 9.658216e-01 9.643557e-01 8.756823e-01 9.643557e-01
+[5656] 9.484813e-01 6.927802e-01 9.933801e-01 9.934690e-01 8.843290e-01
+[5661] 9.410359e-01 7.494804e-01 9.778233e-01 8.823648e-01 9.645216e-01
+[5666] 8.897470e-01 9.921620e-01 8.595973e-01 9.418356e-01 9.857820e-01
+[5671] 9.003703e-01 9.758342e-01 7.711957e-01 9.938993e-01 8.767312e-01
+[5676] 7.544170e-01 9.751406e-01 9.655010e-01 7.527886e-01 9.356564e-01
+[5681] 8.887948e-01 8.838045e-01 8.735616e-01 8.920962e-01 8.640626e-01
+[5686] 8.804373e-01 8.737122e-01 7.251438e-01 9.622640e-01 7.039244e-01
+[5691] 9.740636e-01 9.926692e-01 8.735616e-01 8.887948e-01 9.641892e-01
+[5696] 9.930482e-01 9.930482e-01 6.526521e-01 9.640219e-01 9.697550e-01
+[5701] 9.971378e-01 9.411330e-01 9.939285e-01 8.711529e-01 9.848219e-01
+[5706] 9.417711e-01 9.417711e-01 8.777427e-01 9.418967e-01 9.367301e-01
+[5711] 9.175766e-01 9.501878e-01 9.420999e-01 8.942900e-01 9.242088e-01
+[5716] 8.782902e-01 6.438325e-01 6.388567e-01 8.640626e-01 9.193073e-01
+[5721] 8.883441e-01 7.728975e-01 7.434567e-01 7.761769e-01 8.993201e-01
+[5726] 9.646465e-01 9.404311e-01 8.692272e-01 8.809453e-01 8.925607e-01
+[5731] 9.748763e-01 8.734314e-01 9.221322e-01 9.651378e-01 9.631321e-01
+[5736] 6.545747e-01 8.803425e-01 9.672293e-01 8.803425e-01 8.803425e-01
+[5741] 8.657574e-01 8.657574e-01 8.657574e-01 7.588683e-01 9.672293e-01
+[5746] 9.724660e-01 8.783864e-01 9.645216e-01 9.645216e-01 8.907195e-01
+[5751] 8.907195e-01 8.670131e-01 8.962978e-01 6.595056e-01 9.930734e-01
+[5756] 8.707347e-01 8.858045e-01 6.784109e-01 8.791951e-01 7.666914e-01
+[5761] 7.666914e-01 8.760799e-01 8.760799e-01 7.525694e-01 8.965537e-01
+[5766] 8.897747e-01 9.930066e-01 8.728959e-01 5.191899e-01 7.684166e-01
+[5771] 9.430827e-01 9.519864e-01 9.679784e-01 9.679784e-01 9.659422e-01
+[5776] 8.853427e-01 6.949905e-01 8.853427e-01 8.925607e-01 9.945561e-01
+[5781] 9.463969e-01 8.872353e-01 9.815035e-01 8.755540e-01 8.786806e-01
+[5786] 9.932377e-01 8.760799e-01 9.450103e-01 8.910475e-01 8.942900e-01
+[5791] 8.808217e-01 7.597520e-01 8.808509e-01 6.678344e-01 8.823360e-01
+[5796] 8.696424e-01 9.658216e-01 9.641485e-01 6.296109e-01 7.709878e-01
+[5801] 8.807272e-01 8.966629e-01 8.843290e-01 8.883160e-01 9.661009e-01
+[5806] 8.766038e-01 8.740641e-01 9.631321e-01 7.579316e-01 9.634739e-01
+[5811] 8.692272e-01 8.906650e-01 9.589371e-01 8.730266e-01 9.933345e-01
+[5816] 8.724896e-01 8.843290e-01 9.933024e-01 8.719508e-01 8.719508e-01
+[5821] 8.747245e-01 8.623499e-01 9.110930e-01 8.862927e-01 8.226257e-01
+[5826] 8.947462e-01 8.800417e-01 8.686767e-01 7.701329e-01 9.383597e-01
+[5831] 9.624392e-01 2.287705e-01 8.233748e-02 5.923447e-02 8.139960e-02
+[5836] 8.359528e-02 1.156783e-02 4.562590e-03 1.879960e-01 1.007444e-03
+[5841] 2.132902e-01 4.007994e-02 6.675205e-02 1.847161e-01 4.260603e-02
+[5846] 2.610396e-02 1.717734e-01 1.717734e-01 5.869790e-02 1.789619e-01
+[5851] 9.170961e-02 9.170961e-02 1.821626e-01 4.718946e-01 9.851965e-02
+[5856] 1.780528e-01 5.795072e-02 1.780528e-01 3.249653e-01 2.058565e-01
+[5861] 2.279186e-01 1.267753e-02 1.809008e-01 5.273215e-02 1.865243e-01
+[5866] 1.879960e-01 2.089903e-01 2.339798e-01 2.161223e-01 2.104437e-01
+[5871] 3.962797e-01 1.889156e-01 9.057566e-01 4.387308e-01 1.816184e-01
+[5876] 3.564440e-01 3.397219e-01 6.548518e-02 8.932158e-02 2.035412e-01
+[5881] 1.881759e-01 8.403569e-02 1.789619e-01 1.935413e-01 1.853752e-01
+[5886] 3.313610e-01 1.750699e-01 1.845702e-02 9.716036e-02 1.757692e-01
+[5891] 1.949138e-01 2.402131e-01 3.867846e-01 1.688740e-01</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">somers2</span>(<span class="fu">binomial</span>()<span class="sc">$</span><span class="fu">linkinv</span>(<span class="fu">fitted</span>(glmmodel)), <span class="fu">as.numeric</span>(gen<span class="sc">$</span>Response.variable) <span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           C          Dxy            n      Missing 
+   0.9614421    0.9228842 5894.0000000    0.0000000 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(glmmodel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                           GVIF Df GVIF^(1/(2*Df))
+Final.sibilancy        1.060142  1        1.029632
+Semantic.relation      1.310006  4        1.034330
+Possessor.animacy      1.820686  4        1.077778
+Possessor.definiteness 1.474326  2        1.101916
+Possessor.length       1.235038  1        1.111323
+Possessum.length       1.059675  1        1.029405
+Speaker.sex            1.035597  1        1.017643
+Speaker.age            1.064471  1        1.031732</code></pre>
+</div>
+</div>
+<div class="cell" data-hash="practice1-gen_cache/html/fig-effects_09010642475d3c739948fa0426826bd1">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>fitted <span class="ot">&lt;-</span> <span class="fu">fitted</span>(glmmodel)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>predicted <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(fitted <span class="sc">&gt;=</span> .<span class="dv">5</span>, <span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(gen, predicted)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="fu">CrossTable</span>(gen<span class="sc">$</span>Response.variable, a<span class="sc">$</span>predicted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+| Chi-square contribution |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  5894 
+
+ 
+                      | a$predicted 
+gen$Response.variable |         0 |         1 | Row Total | 
+----------------------|-----------|-----------|-----------|
+          of-genitive |      2736 |       258 |      2994 | 
+                      |  1012.457 |  1020.044 |           | 
+                      |     0.914 |     0.086 |     0.508 | 
+                      |     0.925 |     0.088 |           | 
+                      |     0.464 |     0.044 |           | 
+----------------------|-----------|-----------|-----------|
+           s-genitive |       222 |      2678 |      2900 | 
+                      |  1045.275 |  1053.107 |           | 
+                      |     0.077 |     0.923 |     0.492 | 
+                      |     0.075 |     0.912 |           | 
+                      |     0.038 |     0.454 |           | 
+----------------------|-----------|-----------|-----------|
+         Column Total |      2958 |      2936 |      5894 | 
+                      |     0.502 |     0.498 |           | 
+----------------------|-----------|-----------|-----------|
+
+ </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">allEffects</span>(glmmodel))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-effects" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="practice1-gen_files/figure-html/fig-effects-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: <strong>?(caption)</strong></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="mixed-effects-logistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="mixed-effects-logistic-regression">Mixed-effects logistic regression</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>gen<span class="sc">$</span>Response.variable <span class="ot">&lt;-</span> <span class="fu">relevel</span>(gen<span class="sc">$</span>Response.variable, <span class="at">ref=</span><span class="st">"of-genitive"</span>)</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>lme4model <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Response.variable <span class="sc">~</span> </span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>                     Final.sibilancy <span class="sc">+</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>                     Semantic.relation <span class="sc">+</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>                     <span class="co">#(1|Speaker)+</span></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>                     (<span class="dv">1</span><span class="sc">|</span>Variety), <span class="co"># random effect (intercept adjustment)</span></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>                     </span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> gen,</span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">family=</span>binomial</span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(lme4model), <span class="at">corr =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: Response.variable ~ Final.sibilancy + Semantic.relation + (1 |  
+    Variety)
+   Data: gen
+
+     AIC      BIC   logLik deviance df.resid 
+  5373.6   5420.4  -2679.8   5359.6     5887 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-10.4607  -0.5745  -0.0668   0.3455   8.5547 
+
+Random effects:
+ Groups  Name        Variance Std.Dev.
+ Variety (Intercept) 0.1571   0.3964  
+Number of obs: 5894, groups:  Variety, 4
+
+Fixed effects:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)          2.1931     0.3164   6.931 4.19e-12 ***
+Final.sibilancy1    -1.1177     0.1115 -10.025  &lt; 2e-16 ***
+Semantic.relationK   0.5410     0.2848   1.900   0.0575 .  
+Semantic.relationN  -2.6931     0.2481 -10.855  &lt; 2e-16 ***
+Semantic.relationO   2.0409     0.3911   5.218 1.81e-07 ***
+Semantic.relationP  -5.8777     0.4557 -12.899  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">somers2</span>(<span class="fu">binomial</span>()<span class="sc">$</span><span class="fu">linkinv</span>(<span class="fu">fitted</span>(lme4model)), <span class="fu">as.numeric</span>(gen<span class="sc">$</span>Response.variable) <span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           C          Dxy            n      Missing 
+   0.8470426    0.6940853 5894.0000000    0.0000000 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>fitted <span class="ot">&lt;-</span> <span class="fu">fitted</span>(lme4model)</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>predicted <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(fitted <span class="sc">&gt;=</span> .<span class="dv">5</span>, <span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(gen, predicted)</span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="fu">CrossTable</span>(gen<span class="sc">$</span>Response.variable, a<span class="sc">$</span>predicted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+| Chi-square contribution |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  5894 
+
+ 
+                      | a$predicted 
+gen$Response.variable |         0 |         1 | Row Total | 
+----------------------|-----------|-----------|-----------|
+          of-genitive |      2911 |        83 |      2994 | 
+                      |   272.545 |   689.935 |           | 
+                      |     0.972 |     0.028 |     0.508 | 
+                      |     0.689 |     0.050 |           | 
+                      |     0.494 |     0.014 |           | 
+----------------------|-----------|-----------|-----------|
+           s-genitive |      1314 |      1586 |      2900 | 
+                      |   281.379 |   712.298 |           | 
+                      |     0.453 |     0.547 |     0.492 | 
+                      |     0.311 |     0.950 |           | 
+                      |     0.223 |     0.269 |           | 
+----------------------|-----------|-----------|-----------|
+         Column Total |      4225 |      1669 |      5894 | 
+                      |     0.717 |     0.283 |           | 
+----------------------|-----------|-----------|-----------|
+
+ </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ranef</span>(lme4model)<span class="sc">$</span>Variety</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    (Intercept)
+CAN  0.46121436
+NZ  -0.60834198
+UK   0.15989116
+US  -0.01118513</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>nms <span class="ot">&lt;-</span> <span class="fu">rownames</span>(<span class="fu">ranef</span>(lme4model)<span class="sc">$</span>Variety)</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>intercepts <span class="ot">&lt;-</span> <span class="fu">ranef</span>(lme4model)<span class="sc">$</span>Variety[,<span class="dv">1</span>]</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>support <span class="ot">&lt;-</span> <span class="fu">tapply</span>(gen<span class="sc">$</span>Variety, gen<span class="sc">$</span>Variety,length)</span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>labels <span class="ot">&lt;-</span> <span class="fu">paste</span>(nms)</span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(intercepts[<span class="fu">order</span>(intercepts)],<span class="at">names.arg=</span>labels[<span class="fu">order</span>(intercepts)],<span class="at">horiz=</span><span class="cn">FALSE</span>, <span class="at">las=</span><span class="dv">2</span>, <span class="at">cex.names=</span><span class="fl">0.8</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practice1-gen_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r.squaredGLMM</span>(lme4model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'r.squaredGLMM' now calculates a revised statistic. See the help page.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: the null model is correct only if all variables used by the original
+model remain unchanged.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  R2m       R2c
+theoretical 0.5631589 0.5830703
+delta       0.5166179 0.5348838</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">allEffects</span>(lme4model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practice1-gen_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report</span>(glmmodel) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>We fitted a logistic model (estimated using ML) to predict Response.variable
+with Final.sibilancy (formula: Response.variable ~ Final.sibilancy +
+Semantic.relation + Possessor.animacy + Possessor.definiteness +
+Possessor.length + Possessum.length + Speaker.sex + Speaker.age). The model's
+explanatory power is substantial (Tjur's R2 = 0.73). The model's intercept,
+corresponding to Final.sibilancy = 0, is at 4.58 (95% CI [3.89, 5.32], p &lt;
+.001). Within this model:
+
+  - The effect of Final sibilancy [1] is statistically significant and negative
+(beta = -1.30, 95% CI [-1.60, -1.01], p &lt; .001; Std. beta = -1.30, 95% CI
+[-1.60, -1.01])
+  - The effect of Semantic relation [K] is statistically non-significant and
+positive (beta = 0.47, 95% CI [-0.21, 1.09], p = 0.160; Std. beta = 0.47, 95%
+CI [-0.21, 1.09])
+  - The effect of Semantic relation [N] is statistically significant and negative
+(beta = -0.92, 95% CI [-1.53, -0.38], p = 0.002; Std. beta = -0.92, 95% CI
+[-1.53, -0.38])
+  - The effect of Semantic relation [O] is statistically significant and positive
+(beta = 2.10, 95% CI [1.26, 2.99], p &lt; .001; Std. beta = 2.10, 95% CI [1.26,
+2.99])
+  - The effect of Semantic relation [P] is statistically significant and negative
+(beta = -1.57, 95% CI [-2.63, -0.63], p = 0.002; Std. beta = -1.57, 95% CI
+[-2.63, -0.63])
+  - The effect of Possessor animacy [C] is statistically significant and negative
+(beta = -3.43, 95% CI [-3.81, -3.07], p &lt; .001; Std. beta = -3.43, 95% CI
+[-3.81, -3.07])
+  - The effect of Possessor animacy [I] is statistically significant and negative
+(beta = -4.96, 95% CI [-5.32, -4.62], p &lt; .001; Std. beta = -4.96, 95% CI
+[-5.32, -4.62])
+  - The effect of Possessor animacy [L] is statistically significant and negative
+(beta = -4.19, 95% CI [-4.57, -3.84], p &lt; .001; Std. beta = -4.19, 95% CI
+[-4.57, -3.84])
+  - The effect of Possessor animacy [T] is statistically significant and negative
+(beta = -3.91, 95% CI [-4.26, -3.58], p &lt; .001; Std. beta = -3.91, 95% CI
+[-4.26, -3.58])
+  - The effect of Possessor definiteness [Definite-pn] is statistically
+non-significant and negative (beta = -0.02, 95% CI [-0.30, 0.26], p = 0.880;
+Std. beta = -0.02, 95% CI [-0.30, 0.26])
+  - The effect of Possessor definiteness [Indefinite] is statistically
+significant and negative (beta = -0.79, 95% CI [-1.06, -0.52], p &lt; .001; Std.
+beta = -0.79, 95% CI [-1.06, -0.52])
+  - The effect of Possessor length is statistically significant and negative
+(beta = -0.85, 95% CI [-0.98, -0.72], p &lt; .001; Std. beta = -1.10, 95% CI
+[-1.28, -0.94])
+  - The effect of Possessum length is statistically significant and positive
+(beta = 0.18, 95% CI [0.03, 0.33], p = 0.017; Std. beta = 0.11, 95% CI [0.02,
+0.20])
+  - The effect of Speaker sex [M] is statistically non-significant and negative
+(beta = -0.04, 95% CI [-0.24, 0.16], p = 0.697; Std. beta = -0.04, 95% CI
+[-0.24, 0.16])
+  - The effect of Speaker age is statistically non-significant and negative (beta
+= -4.83e-03, 95% CI [-9.90e-03, 2.16e-04], p = 0.061; Std. beta = -0.10, 95% CI
+[-0.20, 4.39e-03])
+
+Standardized parameters were obtained by fitting the model on a standardized
+version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+computed using a Wald z-distribution approximation., We fitted a logistic model
+(estimated using ML) to predict Response.variable with Semantic.relation
+(formula: Response.variable ~ Final.sibilancy + Semantic.relation +
+Possessor.animacy + Possessor.definiteness + Possessor.length +
+Possessum.length + Speaker.sex + Speaker.age). The model's explanatory power is
+substantial (Tjur's R2 = 0.73). The model's intercept, corresponding to
+Semantic.relation = B, is at 4.58 (95% CI [3.89, 5.32], p &lt; .001). Within this
+model:
+
+  - The effect of Final sibilancy [1] is statistically significant and negative
+(beta = -1.30, 95% CI [-1.60, -1.01], p &lt; .001; Std. beta = -1.30, 95% CI
+[-1.60, -1.01])
+  - The effect of Semantic relation [K] is statistically non-significant and
+positive (beta = 0.47, 95% CI [-0.21, 1.09], p = 0.160; Std. beta = 0.47, 95%
+CI [-0.21, 1.09])
+  - The effect of Semantic relation [N] is statistically significant and negative
+(beta = -0.92, 95% CI [-1.53, -0.38], p = 0.002; Std. beta = -0.92, 95% CI
+[-1.53, -0.38])
+  - The effect of Semantic relation [O] is statistically significant and positive
+(beta = 2.10, 95% CI [1.26, 2.99], p &lt; .001; Std. beta = 2.10, 95% CI [1.26,
+2.99])
+  - The effect of Semantic relation [P] is statistically significant and negative
+(beta = -1.57, 95% CI [-2.63, -0.63], p = 0.002; Std. beta = -1.57, 95% CI
+[-2.63, -0.63])
+  - The effect of Possessor animacy [C] is statistically significant and negative
+(beta = -3.43, 95% CI [-3.81, -3.07], p &lt; .001; Std. beta = -3.43, 95% CI
+[-3.81, -3.07])
+  - The effect of Possessor animacy [I] is statistically significant and negative
+(beta = -4.96, 95% CI [-5.32, -4.62], p &lt; .001; Std. beta = -4.96, 95% CI
+[-5.32, -4.62])
+  - The effect of Possessor animacy [L] is statistically significant and negative
+(beta = -4.19, 95% CI [-4.57, -3.84], p &lt; .001; Std. beta = -4.19, 95% CI
+[-4.57, -3.84])
+  - The effect of Possessor animacy [T] is statistically significant and negative
+(beta = -3.91, 95% CI [-4.26, -3.58], p &lt; .001; Std. beta = -3.91, 95% CI
+[-4.26, -3.58])
+  - The effect of Possessor definiteness [Definite-pn] is statistically
+non-significant and negative (beta = -0.02, 95% CI [-0.30, 0.26], p = 0.880;
+Std. beta = -0.02, 95% CI [-0.30, 0.26])
+  - The effect of Possessor definiteness [Indefinite] is statistically
+significant and negative (beta = -0.79, 95% CI [-1.06, -0.52], p &lt; .001; Std.
+beta = -0.79, 95% CI [-1.06, -0.52])
+  - The effect of Possessor length is statistically significant and negative
+(beta = -0.85, 95% CI [-0.98, -0.72], p &lt; .001; Std. beta = -1.10, 95% CI
+[-1.28, -0.94])
+  - The effect of Possessum length is statistically significant and positive
+(beta = 0.18, 95% CI [0.03, 0.33], p = 0.017; Std. beta = 0.11, 95% CI [0.02,
+0.20])
+  - The effect of Speaker sex [M] is statistically non-significant and negative
+(beta = -0.04, 95% CI [-0.24, 0.16], p = 0.697; Std. beta = -0.04, 95% CI
+[-0.24, 0.16])
+  - The effect of Speaker age is statistically non-significant and negative (beta
+= -4.83e-03, 95% CI [-9.90e-03, 2.16e-04], p = 0.061; Std. beta = -0.10, 95% CI
+[-0.20, 4.39e-03])
+
+Standardized parameters were obtained by fitting the model on a standardized
+version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+computed using a Wald z-distribution approximation., We fitted a logistic model
+(estimated using ML) to predict Response.variable with Possessor.animacy
+(formula: Response.variable ~ Final.sibilancy + Semantic.relation +
+Possessor.animacy + Possessor.definiteness + Possessor.length +
+Possessum.length + Speaker.sex + Speaker.age). The model's explanatory power is
+substantial (Tjur's R2 = 0.73). The model's intercept, corresponding to
+Possessor.animacy = A, is at 4.58 (95% CI [3.89, 5.32], p &lt; .001). Within this
+model:
+
+  - The effect of Final sibilancy [1] is statistically significant and negative
+(beta = -1.30, 95% CI [-1.60, -1.01], p &lt; .001; Std. beta = -1.30, 95% CI
+[-1.60, -1.01])
+  - The effect of Semantic relation [K] is statistically non-significant and
+positive (beta = 0.47, 95% CI [-0.21, 1.09], p = 0.160; Std. beta = 0.47, 95%
+CI [-0.21, 1.09])
+  - The effect of Semantic relation [N] is statistically significant and negative
+(beta = -0.92, 95% CI [-1.53, -0.38], p = 0.002; Std. beta = -0.92, 95% CI
+[-1.53, -0.38])
+  - The effect of Semantic relation [O] is statistically significant and positive
+(beta = 2.10, 95% CI [1.26, 2.99], p &lt; .001; Std. beta = 2.10, 95% CI [1.26,
+2.99])
+  - The effect of Semantic relation [P] is statistically significant and negative
+(beta = -1.57, 95% CI [-2.63, -0.63], p = 0.002; Std. beta = -1.57, 95% CI
+[-2.63, -0.63])
+  - The effect of Possessor animacy [C] is statistically significant and negative
+(beta = -3.43, 95% CI [-3.81, -3.07], p &lt; .001; Std. beta = -3.43, 95% CI
+[-3.81, -3.07])
+  - The effect of Possessor animacy [I] is statistically significant and negative
+(beta = -4.96, 95% CI [-5.32, -4.62], p &lt; .001; Std. beta = -4.96, 95% CI
+[-5.32, -4.62])
+  - The effect of Possessor animacy [L] is statistically significant and negative
+(beta = -4.19, 95% CI [-4.57, -3.84], p &lt; .001; Std. beta = -4.19, 95% CI
+[-4.57, -3.84])
+  - The effect of Possessor animacy [T] is statistically significant and negative
+(beta = -3.91, 95% CI [-4.26, -3.58], p &lt; .001; Std. beta = -3.91, 95% CI
+[-4.26, -3.58])
+  - The effect of Possessor definiteness [Definite-pn] is statistically
+non-significant and negative (beta = -0.02, 95% CI [-0.30, 0.26], p = 0.880;
+Std. beta = -0.02, 95% CI [-0.30, 0.26])
+  - The effect of Possessor definiteness [Indefinite] is statistically
+significant and negative (beta = -0.79, 95% CI [-1.06, -0.52], p &lt; .001; Std.
+beta = -0.79, 95% CI [-1.06, -0.52])
+  - The effect of Possessor length is statistically significant and negative
+(beta = -0.85, 95% CI [-0.98, -0.72], p &lt; .001; Std. beta = -1.10, 95% CI
+[-1.28, -0.94])
+  - The effect of Possessum length is statistically significant and positive
+(beta = 0.18, 95% CI [0.03, 0.33], p = 0.017; Std. beta = 0.11, 95% CI [0.02,
+0.20])
+  - The effect of Speaker sex [M] is statistically non-significant and negative
+(beta = -0.04, 95% CI [-0.24, 0.16], p = 0.697; Std. beta = -0.04, 95% CI
+[-0.24, 0.16])
+  - The effect of Speaker age is statistically non-significant and negative (beta
+= -4.83e-03, 95% CI [-9.90e-03, 2.16e-04], p = 0.061; Std. beta = -0.10, 95% CI
+[-0.20, 4.39e-03])
+
+Standardized parameters were obtained by fitting the model on a standardized
+version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+computed using a Wald z-distribution approximation., We fitted a logistic model
+(estimated using ML) to predict Response.variable with Possessor.definiteness
+(formula: Response.variable ~ Final.sibilancy + Semantic.relation +
+Possessor.animacy + Possessor.definiteness + Possessor.length +
+Possessum.length + Speaker.sex + Speaker.age). The model's explanatory power is
+substantial (Tjur's R2 = 0.73). The model's intercept, corresponding to
+Possessor.definiteness = Definite, is at 4.58 (95% CI [3.89, 5.32], p &lt; .001).
+Within this model:
+
+  - The effect of Final sibilancy [1] is statistically significant and negative
+(beta = -1.30, 95% CI [-1.60, -1.01], p &lt; .001; Std. beta = -1.30, 95% CI
+[-1.60, -1.01])
+  - The effect of Semantic relation [K] is statistically non-significant and
+positive (beta = 0.47, 95% CI [-0.21, 1.09], p = 0.160; Std. beta = 0.47, 95%
+CI [-0.21, 1.09])
+  - The effect of Semantic relation [N] is statistically significant and negative
+(beta = -0.92, 95% CI [-1.53, -0.38], p = 0.002; Std. beta = -0.92, 95% CI
+[-1.53, -0.38])
+  - The effect of Semantic relation [O] is statistically significant and positive
+(beta = 2.10, 95% CI [1.26, 2.99], p &lt; .001; Std. beta = 2.10, 95% CI [1.26,
+2.99])
+  - The effect of Semantic relation [P] is statistically significant and negative
+(beta = -1.57, 95% CI [-2.63, -0.63], p = 0.002; Std. beta = -1.57, 95% CI
+[-2.63, -0.63])
+  - The effect of Possessor animacy [C] is statistically significant and negative
+(beta = -3.43, 95% CI [-3.81, -3.07], p &lt; .001; Std. beta = -3.43, 95% CI
+[-3.81, -3.07])
+  - The effect of Possessor animacy [I] is statistically significant and negative
+(beta = -4.96, 95% CI [-5.32, -4.62], p &lt; .001; Std. beta = -4.96, 95% CI
+[-5.32, -4.62])
+  - The effect of Possessor animacy [L] is statistically significant and negative
+(beta = -4.19, 95% CI [-4.57, -3.84], p &lt; .001; Std. beta = -4.19, 95% CI
+[-4.57, -3.84])
+  - The effect of Possessor animacy [T] is statistically significant and negative
+(beta = -3.91, 95% CI [-4.26, -3.58], p &lt; .001; Std. beta = -3.91, 95% CI
+[-4.26, -3.58])
+  - The effect of Possessor definiteness [Definite-pn] is statistically
+non-significant and negative (beta = -0.02, 95% CI [-0.30, 0.26], p = 0.880;
+Std. beta = -0.02, 95% CI [-0.30, 0.26])
+  - The effect of Possessor definiteness [Indefinite] is statistically
+significant and negative (beta = -0.79, 95% CI [-1.06, -0.52], p &lt; .001; Std.
+beta = -0.79, 95% CI [-1.06, -0.52])
+  - The effect of Possessor length is statistically significant and negative
+(beta = -0.85, 95% CI [-0.98, -0.72], p &lt; .001; Std. beta = -1.10, 95% CI
+[-1.28, -0.94])
+  - The effect of Possessum length is statistically significant and positive
+(beta = 0.18, 95% CI [0.03, 0.33], p = 0.017; Std. beta = 0.11, 95% CI [0.02,
+0.20])
+  - The effect of Speaker sex [M] is statistically non-significant and negative
+(beta = -0.04, 95% CI [-0.24, 0.16], p = 0.697; Std. beta = -0.04, 95% CI
+[-0.24, 0.16])
+  - The effect of Speaker age is statistically non-significant and negative (beta
+= -4.83e-03, 95% CI [-9.90e-03, 2.16e-04], p = 0.061; Std. beta = -0.10, 95% CI
+[-0.20, 4.39e-03])
+
+Standardized parameters were obtained by fitting the model on a standardized
+version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+computed using a Wald z-distribution approximation., We fitted a logistic model
+(estimated using ML) to predict Response.variable with Possessor.length
+(formula: Response.variable ~ Final.sibilancy + Semantic.relation +
+Possessor.animacy + Possessor.definiteness + Possessor.length +
+Possessum.length + Speaker.sex + Speaker.age). The model's explanatory power is
+substantial (Tjur's R2 = 0.73). The model's intercept, corresponding to
+Possessor.length = 0, is at 4.58 (95% CI [3.89, 5.32], p &lt; .001). Within this
+model:
+
+  - The effect of Final sibilancy [1] is statistically significant and negative
+(beta = -1.30, 95% CI [-1.60, -1.01], p &lt; .001; Std. beta = -1.30, 95% CI
+[-1.60, -1.01])
+  - The effect of Semantic relation [K] is statistically non-significant and
+positive (beta = 0.47, 95% CI [-0.21, 1.09], p = 0.160; Std. beta = 0.47, 95%
+CI [-0.21, 1.09])
+  - The effect of Semantic relation [N] is statistically significant and negative
+(beta = -0.92, 95% CI [-1.53, -0.38], p = 0.002; Std. beta = -0.92, 95% CI
+[-1.53, -0.38])
+  - The effect of Semantic relation [O] is statistically significant and positive
+(beta = 2.10, 95% CI [1.26, 2.99], p &lt; .001; Std. beta = 2.10, 95% CI [1.26,
+2.99])
+  - The effect of Semantic relation [P] is statistically significant and negative
+(beta = -1.57, 95% CI [-2.63, -0.63], p = 0.002; Std. beta = -1.57, 95% CI
+[-2.63, -0.63])
+  - The effect of Possessor animacy [C] is statistically significant and negative
+(beta = -3.43, 95% CI [-3.81, -3.07], p &lt; .001; Std. beta = -3.43, 95% CI
+[-3.81, -3.07])
+  - The effect of Possessor animacy [I] is statistically significant and negative
+(beta = -4.96, 95% CI [-5.32, -4.62], p &lt; .001; Std. beta = -4.96, 95% CI
+[-5.32, -4.62])
+  - The effect of Possessor animacy [L] is statistically significant and negative
+(beta = -4.19, 95% CI [-4.57, -3.84], p &lt; .001; Std. beta = -4.19, 95% CI
+[-4.57, -3.84])
+  - The effect of Possessor animacy [T] is statistically significant and negative
+(beta = -3.91, 95% CI [-4.26, -3.58], p &lt; .001; Std. beta = -3.91, 95% CI
+[-4.26, -3.58])
+  - The effect of Possessor definiteness [Definite-pn] is statistically
+non-significant and negative (beta = -0.02, 95% CI [-0.30, 0.26], p = 0.880;
+Std. beta = -0.02, 95% CI [-0.30, 0.26])
+  - The effect of Possessor definiteness [Indefinite] is statistically
+significant and negative (beta = -0.79, 95% CI [-1.06, -0.52], p &lt; .001; Std.
+beta = -0.79, 95% CI [-1.06, -0.52])
+  - The effect of Possessor length is statistically significant and negative
+(beta = -0.85, 95% CI [-0.98, -0.72], p &lt; .001; Std. beta = -1.10, 95% CI
+[-1.28, -0.94])
+  - The effect of Possessum length is statistically significant and positive
+(beta = 0.18, 95% CI [0.03, 0.33], p = 0.017; Std. beta = 0.11, 95% CI [0.02,
+0.20])
+  - The effect of Speaker sex [M] is statistically non-significant and negative
+(beta = -0.04, 95% CI [-0.24, 0.16], p = 0.697; Std. beta = -0.04, 95% CI
+[-0.24, 0.16])
+  - The effect of Speaker age is statistically non-significant and negative (beta
+= -4.83e-03, 95% CI [-9.90e-03, 2.16e-04], p = 0.061; Std. beta = -0.10, 95% CI
+[-0.20, 4.39e-03])
+
+Standardized parameters were obtained by fitting the model on a standardized
+version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+computed using a Wald z-distribution approximation., We fitted a logistic model
+(estimated using ML) to predict Response.variable with Possessum.length
+(formula: Response.variable ~ Final.sibilancy + Semantic.relation +
+Possessor.animacy + Possessor.definiteness + Possessor.length +
+Possessum.length + Speaker.sex + Speaker.age). The model's explanatory power is
+substantial (Tjur's R2 = 0.73). The model's intercept, corresponding to
+Possessum.length = 0, is at 4.58 (95% CI [3.89, 5.32], p &lt; .001). Within this
+model:
+
+  - The effect of Final sibilancy [1] is statistically significant and negative
+(beta = -1.30, 95% CI [-1.60, -1.01], p &lt; .001; Std. beta = -1.30, 95% CI
+[-1.60, -1.01])
+  - The effect of Semantic relation [K] is statistically non-significant and
+positive (beta = 0.47, 95% CI [-0.21, 1.09], p = 0.160; Std. beta = 0.47, 95%
+CI [-0.21, 1.09])
+  - The effect of Semantic relation [N] is statistically significant and negative
+(beta = -0.92, 95% CI [-1.53, -0.38], p = 0.002; Std. beta = -0.92, 95% CI
+[-1.53, -0.38])
+  - The effect of Semantic relation [O] is statistically significant and positive
+(beta = 2.10, 95% CI [1.26, 2.99], p &lt; .001; Std. beta = 2.10, 95% CI [1.26,
+2.99])
+  - The effect of Semantic relation [P] is statistically significant and negative
+(beta = -1.57, 95% CI [-2.63, -0.63], p = 0.002; Std. beta = -1.57, 95% CI
+[-2.63, -0.63])
+  - The effect of Possessor animacy [C] is statistically significant and negative
+(beta = -3.43, 95% CI [-3.81, -3.07], p &lt; .001; Std. beta = -3.43, 95% CI
+[-3.81, -3.07])
+  - The effect of Possessor animacy [I] is statistically significant and negative
+(beta = -4.96, 95% CI [-5.32, -4.62], p &lt; .001; Std. beta = -4.96, 95% CI
+[-5.32, -4.62])
+  - The effect of Possessor animacy [L] is statistically significant and negative
+(beta = -4.19, 95% CI [-4.57, -3.84], p &lt; .001; Std. beta = -4.19, 95% CI
+[-4.57, -3.84])
+  - The effect of Possessor animacy [T] is statistically significant and negative
+(beta = -3.91, 95% CI [-4.26, -3.58], p &lt; .001; Std. beta = -3.91, 95% CI
+[-4.26, -3.58])
+  - The effect of Possessor definiteness [Definite-pn] is statistically
+non-significant and negative (beta = -0.02, 95% CI [-0.30, 0.26], p = 0.880;
+Std. beta = -0.02, 95% CI [-0.30, 0.26])
+  - The effect of Possessor definiteness [Indefinite] is statistically
+significant and negative (beta = -0.79, 95% CI [-1.06, -0.52], p &lt; .001; Std.
+beta = -0.79, 95% CI [-1.06, -0.52])
+  - The effect of Possessor length is statistically significant and negative
+(beta = -0.85, 95% CI [-0.98, -0.72], p &lt; .001; Std. beta = -1.10, 95% CI
+[-1.28, -0.94])
+  - The effect of Possessum length is statistically significant and positive
+(beta = 0.18, 95% CI [0.03, 0.33], p = 0.017; Std. beta = 0.11, 95% CI [0.02,
+0.20])
+  - The effect of Speaker sex [M] is statistically non-significant and negative
+(beta = -0.04, 95% CI [-0.24, 0.16], p = 0.697; Std. beta = -0.04, 95% CI
+[-0.24, 0.16])
+  - The effect of Speaker age is statistically non-significant and negative (beta
+= -4.83e-03, 95% CI [-9.90e-03, 2.16e-04], p = 0.061; Std. beta = -0.10, 95% CI
+[-0.20, 4.39e-03])
+
+Standardized parameters were obtained by fitting the model on a standardized
+version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+computed using a Wald z-distribution approximation., We fitted a logistic model
+(estimated using ML) to predict Response.variable with Speaker.sex (formula:
+Response.variable ~ Final.sibilancy + Semantic.relation + Possessor.animacy +
+Possessor.definiteness + Possessor.length + Possessum.length + Speaker.sex +
+Speaker.age). The model's explanatory power is substantial (Tjur's R2 = 0.73).
+The model's intercept, corresponding to Speaker.sex = F, is at 4.58 (95% CI
+[3.89, 5.32], p &lt; .001). Within this model:
+
+  - The effect of Final sibilancy [1] is statistically significant and negative
+(beta = -1.30, 95% CI [-1.60, -1.01], p &lt; .001; Std. beta = -1.30, 95% CI
+[-1.60, -1.01])
+  - The effect of Semantic relation [K] is statistically non-significant and
+positive (beta = 0.47, 95% CI [-0.21, 1.09], p = 0.160; Std. beta = 0.47, 95%
+CI [-0.21, 1.09])
+  - The effect of Semantic relation [N] is statistically significant and negative
+(beta = -0.92, 95% CI [-1.53, -0.38], p = 0.002; Std. beta = -0.92, 95% CI
+[-1.53, -0.38])
+  - The effect of Semantic relation [O] is statistically significant and positive
+(beta = 2.10, 95% CI [1.26, 2.99], p &lt; .001; Std. beta = 2.10, 95% CI [1.26,
+2.99])
+  - The effect of Semantic relation [P] is statistically significant and negative
+(beta = -1.57, 95% CI [-2.63, -0.63], p = 0.002; Std. beta = -1.57, 95% CI
+[-2.63, -0.63])
+  - The effect of Possessor animacy [C] is statistically significant and negative
+(beta = -3.43, 95% CI [-3.81, -3.07], p &lt; .001; Std. beta = -3.43, 95% CI
+[-3.81, -3.07])
+  - The effect of Possessor animacy [I] is statistically significant and negative
+(beta = -4.96, 95% CI [-5.32, -4.62], p &lt; .001; Std. beta = -4.96, 95% CI
+[-5.32, -4.62])
+  - The effect of Possessor animacy [L] is statistically significant and negative
+(beta = -4.19, 95% CI [-4.57, -3.84], p &lt; .001; Std. beta = -4.19, 95% CI
+[-4.57, -3.84])
+  - The effect of Possessor animacy [T] is statistically significant and negative
+(beta = -3.91, 95% CI [-4.26, -3.58], p &lt; .001; Std. beta = -3.91, 95% CI
+[-4.26, -3.58])
+  - The effect of Possessor definiteness [Definite-pn] is statistically
+non-significant and negative (beta = -0.02, 95% CI [-0.30, 0.26], p = 0.880;
+Std. beta = -0.02, 95% CI [-0.30, 0.26])
+  - The effect of Possessor definiteness [Indefinite] is statistically
+significant and negative (beta = -0.79, 95% CI [-1.06, -0.52], p &lt; .001; Std.
+beta = -0.79, 95% CI [-1.06, -0.52])
+  - The effect of Possessor length is statistically significant and negative
+(beta = -0.85, 95% CI [-0.98, -0.72], p &lt; .001; Std. beta = -1.10, 95% CI
+[-1.28, -0.94])
+  - The effect of Possessum length is statistically significant and positive
+(beta = 0.18, 95% CI [0.03, 0.33], p = 0.017; Std. beta = 0.11, 95% CI [0.02,
+0.20])
+  - The effect of Speaker sex [M] is statistically non-significant and negative
+(beta = -0.04, 95% CI [-0.24, 0.16], p = 0.697; Std. beta = -0.04, 95% CI
+[-0.24, 0.16])
+  - The effect of Speaker age is statistically non-significant and negative (beta
+= -4.83e-03, 95% CI [-9.90e-03, 2.16e-04], p = 0.061; Std. beta = -0.10, 95% CI
+[-0.20, 4.39e-03])
+
+Standardized parameters were obtained by fitting the model on a standardized
+version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+computed using a Wald z-distribution approximation. and We fitted a logistic
+model (estimated using ML) to predict Response.variable with Speaker.age
+(formula: Response.variable ~ Final.sibilancy + Semantic.relation +
+Possessor.animacy + Possessor.definiteness + Possessor.length +
+Possessum.length + Speaker.sex + Speaker.age). The model's explanatory power is
+substantial (Tjur's R2 = 0.73). The model's intercept, corresponding to
+Speaker.age = 0, is at 4.58 (95% CI [3.89, 5.32], p &lt; .001). Within this model:
+
+  - The effect of Final sibilancy [1] is statistically significant and negative
+(beta = -1.30, 95% CI [-1.60, -1.01], p &lt; .001; Std. beta = -1.30, 95% CI
+[-1.60, -1.01])
+  - The effect of Semantic relation [K] is statistically non-significant and
+positive (beta = 0.47, 95% CI [-0.21, 1.09], p = 0.160; Std. beta = 0.47, 95%
+CI [-0.21, 1.09])
+  - The effect of Semantic relation [N] is statistically significant and negative
+(beta = -0.92, 95% CI [-1.53, -0.38], p = 0.002; Std. beta = -0.92, 95% CI
+[-1.53, -0.38])
+  - The effect of Semantic relation [O] is statistically significant and positive
+(beta = 2.10, 95% CI [1.26, 2.99], p &lt; .001; Std. beta = 2.10, 95% CI [1.26,
+2.99])
+  - The effect of Semantic relation [P] is statistically significant and negative
+(beta = -1.57, 95% CI [-2.63, -0.63], p = 0.002; Std. beta = -1.57, 95% CI
+[-2.63, -0.63])
+  - The effect of Possessor animacy [C] is statistically significant and negative
+(beta = -3.43, 95% CI [-3.81, -3.07], p &lt; .001; Std. beta = -3.43, 95% CI
+[-3.81, -3.07])
+  - The effect of Possessor animacy [I] is statistically significant and negative
+(beta = -4.96, 95% CI [-5.32, -4.62], p &lt; .001; Std. beta = -4.96, 95% CI
+[-5.32, -4.62])
+  - The effect of Possessor animacy [L] is statistically significant and negative
+(beta = -4.19, 95% CI [-4.57, -3.84], p &lt; .001; Std. beta = -4.19, 95% CI
+[-4.57, -3.84])
+  - The effect of Possessor animacy [T] is statistically significant and negative
+(beta = -3.91, 95% CI [-4.26, -3.58], p &lt; .001; Std. beta = -3.91, 95% CI
+[-4.26, -3.58])
+  - The effect of Possessor definiteness [Definite-pn] is statistically
+non-significant and negative (beta = -0.02, 95% CI [-0.30, 0.26], p = 0.880;
+Std. beta = -0.02, 95% CI [-0.30, 0.26])
+  - The effect of Possessor definiteness [Indefinite] is statistically
+significant and negative (beta = -0.79, 95% CI [-1.06, -0.52], p &lt; .001; Std.
+beta = -0.79, 95% CI [-1.06, -0.52])
+  - The effect of Possessor length is statistically significant and negative
+(beta = -0.85, 95% CI [-0.98, -0.72], p &lt; .001; Std. beta = -1.10, 95% CI
+[-1.28, -0.94])
+  - The effect of Possessum length is statistically significant and positive
+(beta = 0.18, 95% CI [0.03, 0.33], p = 0.017; Std. beta = 0.11, 95% CI [0.02,
+0.20])
+  - The effect of Speaker sex [M] is statistically non-significant and negative
+(beta = -0.04, 95% CI [-0.24, 0.16], p = 0.697; Std. beta = -0.04, 95% CI
+[-0.24, 0.16])
+  - The effect of Speaker age is statistically non-significant and negative (beta
+= -4.83e-03, 95% CI [-9.90e-03, 2.16e-04], p = 0.061; Std. beta = -0.10, 95% CI
+[-0.20, 4.39e-03])
+
+Standardized parameters were obtained by fitting the model on a standardized
+version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+computed using a Wald z-distribution approximation.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_model</span>(glmmodel) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practice1-gen_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Groups plots such as:</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>glm_collinearity <span class="ot">&lt;-</span> <span class="fu">check_collinearity</span>(glmmodel)</span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>glm_collinearity <span class="co"># prints message</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Check for Multicollinearity
+
+Low Correlation
+
+                   Term  VIF   VIF 95% CI Increased SE Tolerance
+        Final.sibilancy 1.06 [1.04, 1.10]         1.03      0.94
+      Semantic.relation 1.31 [1.27, 1.35]         1.14      0.76
+      Possessor.animacy 1.82 [1.76, 1.89]         1.35      0.55
+ Possessor.definiteness 1.47 [1.43, 1.53]         1.21      0.68
+       Possessor.length 1.24 [1.20, 1.28]         1.11      0.81
+       Possessum.length 1.06 [1.04, 1.10]         1.03      0.94
+            Speaker.sex 1.04 [1.02, 1.08]         1.02      0.97
+            Speaker.age 1.06 [1.04, 1.10]         1.03      0.94
+ Tolerance 95% CI
+     [0.91, 0.96]
+     [0.74, 0.79]
+     [0.53, 0.57]
+     [0.66, 0.70]
+     [0.78, 0.83]
+     [0.91, 0.96]
+     [0.93, 0.98]
+     [0.91, 0.96]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(glm_collinearity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practice1-gen_files/figure-html/unnamed-chunk-20-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot outliers</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>glm_outliers <span class="ot">&lt;-</span> <span class="fu">check_outliers</span>(glmmodel)</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>glm_outliers <span class="co"># prints message</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>OK: No outliers detected.
+- Based on the following method and threshold: cook (0.96).
+- For variable: (Whole model)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(glm_outliers) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practice1-gen_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="comparison-between-differnt-models" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-between-differnt-models">Comparison between differnt models</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model_performance</span>(glmmodel) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Indices of model performance
+
+AIC      |      BIC | Tjur's R2 |  RMSE | Sigma | Log_loss | Score_log | Score_spherical |   PCP
+------------------------------------------------------------------------------------------------
+2851.075 | 2957.982 |     0.731 | 0.259 | 0.693 |    0.239 |      -Inf |           0.001 | 0.865</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model_performance</span>(lme4model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Indices of model performance
+
+AIC      |     AICc |      BIC | R2 (cond.) | R2 (marg.) |   ICC |  RMSE | Sigma | Log_loss | Score_log | Score_spherical
+-------------------------------------------------------------------------------------------------------------------------
+5373.601 | 5373.620 | 5420.373 |      0.583 |      0.563 | 0.046 | 0.388 | 1.000 |    0.453 |      -Inf |           0.001</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>comparison <span class="ot">&lt;-</span> <span class="fu">compare_performance</span>(glmmodel, lme4model, <span class="at">metrics =</span> <span class="st">"common"</span>)</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>comparison <span class="co"># note that some metrics are different because the kinds of models are different</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Comparison of Model Performance Indices
+
+Name      |    Model |  AIC (weights) |  BIC (weights) |  RMSE | Tjur's R2 | R2 (cond.) | R2 (marg.) |   ICC
+------------------------------------------------------------------------------------------------------------
+glmmodel  |      glm | 2851.1 (&gt;.999) | 2958.0 (&gt;.999) | 0.259 |     0.731 |            |            |      
+lme4model | glmerMod | 5373.6 (&lt;.001) | 5420.4 (&lt;.001) | 0.388 |           |      0.583 |      0.563 | 0.046</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(comparison)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practice1-gen_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
